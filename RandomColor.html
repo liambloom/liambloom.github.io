@@ -13,8 +13,6 @@
 	<button onclick="myFunction()" name="ReloadButton">Reload Page</button><br>
 	<script>
 		function myFunction() {
-			location.reload();
-		}
 		var color = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
 		var colorArray = []
 		var i
@@ -32,6 +30,7 @@
 		document.body.style.backgroundColor = colorFull
 		document.getElementsByName("ReloadButton")[0].innerHTML=colorFull;
 		document.getElementsByName("ReloadButton")[0].style.background=colorFull;
+	}
 	</script>
 	</body>
 	</html>
