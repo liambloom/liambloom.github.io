@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Random Color</title>
+</head>
+<body>
+	<button onclick="myFunction()">Reload page</button>
+	<script>
+		function myFunction() {
+			location.reload();
+		}
+		var color = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
+		var color1 = color[Math.round(Math.random() * 16)]
+		var color2 = color[Math.round(Math.random() * 16)]
+		var color3 = color[Math.round(Math.random() * 16)]
+		var color4 = color[Math.round(Math.random() * 16)]
+		var color5 = color[Math.round(Math.random() * 16)]
+		var color6 = color[Math.round(Math.random() * 16)]
+		var colorFull = color1 + color2 + color3 + color4 + color5 + color6
+		document.body.style.backgroundColor = "# + colorFull"
+	</script>
+	document.body.
