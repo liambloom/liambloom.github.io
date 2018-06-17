@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<button onclick="myFunction()">Reload Page</button><br>
+	<button onclick="myFunction()" name="ReloadButton">Reload Page</button><br>
 	<script>
 		function myFunction() {
 			location.reload();
@@ -30,8 +30,8 @@
 		}
 		var colorFull = "#" + colorArray[0] + colorArray[1] + colorArray[2] + colorArray[3] + colorArray[4] + colorArray[5]
 		document.body.style.backgroundColor = colorFull
-		document.write(colorFull);
-		document.write(colorArray[0])
+		document.getElementsByName("ReloadButton")[0].innerHTML=colorFull;
+		document.getElementsByName("ReloadButton")[0].style.background=colorFull;
 	</script>
 	</body>
 	</html>
