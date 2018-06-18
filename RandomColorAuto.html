@@ -9,13 +9,20 @@
 	</style>
 </head>
 <body>
-	<script>
-		var color = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
-		setInterval(function(){
-		var colorArray = []
-		var i
-		var colorFull
-		var colorp
+
+	<p name="ColorLabel"></p>
+	<script> 
+		setInterval(function() {
+			myFunction()
+		}, 200)
+		myFunction()
+		function myFunction() {
+			var color = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
+			var colorArray = []
+			var i
+			var colorFull
+			var colorp
+
 		for (i = 0; i < 6; i++) {
 			colorp = undefined
 			do{
@@ -24,10 +31,12 @@
 			while (colorp == undefined)
 			colorArray.push(colorp)
 		}
+
 		var colorFull = "#" + colorArray[0] + colorArray[1] + colorArray[2] + colorArray[3] + colorArray[4] + colorArray[5]
-		document.body.style.backgroundColor = colorFull
-		document.write(colorFull);
-		}, 20)
+		document.body.style.backgroundColor = colorFull;
+ 		document.getElementsByName("ColorLabel")[0].innerHTML=colorFull;
+	}
 	</script>
+
 	</body>
 	</html>
