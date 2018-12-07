@@ -68,7 +68,7 @@
 
 			}*/
 			for(i = 0; i <= c.getMonth(); i++){
-				MonthDays = MonthDays + monthlist[i]
+				MonthDays = MonthDays + monthlist[i] //problem is with monthdays
 			}
 			daysLeft = (days - (MonthDays + c.getDay)).toString(10)
 			hoursLeft = (24 - c.getHours()).toString(10)
@@ -82,7 +82,7 @@
 				document.body.style.backgroundImage ="url('img/fireworks.gif')";//https://giphy.com/gifs/fireworks-IjmMzurYulKEw/download
 				document.getElementById("t").innerHTML = "Happy New Year"
 			}else{
-				document.body.style.backgroundImage ="url('img/hourglass.gif')";//https://giphy.com/gifs/3ohhwlgaHwZ9zQ9HZS
+				document.body.style.backgroundImage ="url('img/Hourglass.gif')";//https://giphy.com/gifs/3ohhwlgaHwZ9zQ9HZS
 				if(daysLeft > 0) {
 					document.getElementById("daysNumber").innerHTML = daysLeft
 					if(daysLeft == 1) {
