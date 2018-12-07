@@ -75,7 +75,13 @@
 			minutesLeft = ((60 - c.getMinutes()) - 1).toString(10)
 			secondsLeft = ((60 - c.getSeconds()) - 1).toString(10)
 			millisecondsLeft = (1000 - c.getMilliseconds()).toString(10)
-			millisecondsLeft = "." + millisecondsLeft
+			if (millisecondsLeft.length = 3) {
+				millisecondsLeft = "." + millisecondsLeft
+			}else if (millisecondsLeft.length = 2) {
+				millisecondsLeft = ".0" + millisecondsLeft
+			}else if (millisecondsLeft.length = 1) {
+				millisecondsLeft = ".00" + millisecondsLeft
+			}
 
 			text = ""
 			if (c.getMonth() == 0 && c.getDay() == 1){
