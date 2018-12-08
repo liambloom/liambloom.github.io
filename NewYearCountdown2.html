@@ -71,7 +71,7 @@
 			for(i = 0; i <= c.getMonth(); i++){
 				MonthDays = MonthDays + monthlist[i] //problem is with monthdays
 			}
-			daysLeft = (days - (MonthDays + c.getDay)).toString(10)
+			daysLeft = (days - (MonthDays + c.getDay())).toString(10)
 			hoursLeft = ((24 - c.getHours()) - 1).toString(10)
 			minutesLeft = ((60 - c.getMinutes()) - 1).toString(10)
 			secondsLeft = ((60 - c.getSeconds()) - 1).toString(10)
