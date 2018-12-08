@@ -30,7 +30,7 @@
 		<span id="secondsNumber" class=number></span>
 		<span id="millisecondsNumber" class=number style="font-size:30px"></span>
 		<span id="secondsLabel" class=label></span>
-		<br>
+		<!--<br>-->
 		<span class=label>until</span>
 		<span id="WhatYear" class=number></span>
 	</p>
@@ -63,14 +63,7 @@
 			}
 			MonthDays = 0
 			monthlist = [0, 31, 28 + leap, 31 + leap, 30 + leap, 31 + leap, 30 + leap, 31 + leap, 31 + leap, 30 + leap, 31 + leap, 30 + leap]
-/*			switch(c.getMonth) {
-				case 0:
-					MonthDays = 0;
-					Break;
-				case 1:
-					MonthDays = 31;
 
-			}*/
 			for(i = 0; i <= c.getMonth(); i++){
 				MonthDays = MonthDays + monthlist[i] //problem is with monthdays
 			}
