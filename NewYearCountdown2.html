@@ -8,7 +8,7 @@
 			text-align: center;
 			font-size:110px;
 			margin:110px;
-			color:#FFFFFF;
+			color:#EE2277;
 		}
 		.number{
 			font-size: 60px;
@@ -30,6 +30,9 @@
 		<span id="secondsNumber" class=number></span>
 		<span id="millisecondsNumber" class=number style="font-size:30px"></span>
 		<span id="secondsLabel" class=label></span>
+		<br>
+		<span class=label>until</span>
+		<span id="WhatYear" class=number></span>
 	</p>
 	<script>
 		var c
@@ -71,7 +74,7 @@
 			for(i = 0; i <= c.getMonth(); i++){
 				MonthDays = MonthDays + monthlist[i] //problem is with monthdays
 			}
-			daysLeft = (days - (MonthDays + c.getDay())).toString(10)
+			daysLeft = (days - (MonthDays + c.getDate())).toString(10)
 			hoursLeft = ((24 - c.getHours()) - 1).toString(10)
 			minutesLeft = ((60 - c.getMinutes()) - 1).toString(10)
 			secondsLeft = ((60 - c.getSeconds()) - 1).toString(10)
@@ -85,7 +88,7 @@
 			}
 
 			text = ""
-			if (c.getMonth() == 0 && c.getDay() == 1){
+			if (c.getMonth() == 0 && c.getDate() == 1){
 				document.body.style.backgroundImage ="url('img/fireworks.gif')";//https://giphy.com/gifs/fireworks-IjmMzurYulKEw/download
 				document.getElementById("t").innerHTML = "Happy New Year"
 			}else{
@@ -123,7 +126,7 @@
 						document.getElementById("secondsLabel").innerHTML = "seconds"
 					}
 				}
-				console.log(c.getDay())
+				document.getElementById("WhatYear").innerHTML = nextYear
 			}
 			
 		}
