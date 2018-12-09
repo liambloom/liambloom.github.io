@@ -1,6 +1,6 @@
-function countdown2(/*yt, mt, dt, ht, mt, st, ut, until, message, bgurl*/) {
-	var c = new Date(2019, 0, 1, 0, 0, 0, 0).getTime;
-	var n = new Date().getTime;
+function countdown2() {
+	var c = new Date(2019, 0, 1, 0, 0, 0, 0).getTime();
+	var n = new Date().getTime();
 	var t = c - n;
 	var d = Math.floor(t / 86400000).toString();
 	var h = Math.floor((t % 86400000) / 3600000).toString();
@@ -38,8 +38,9 @@ function countdown2(/*yt, mt, dt, ht, mt, st, ut, until, message, bgurl*/) {
 				document.getElementById("ml").innerHTML = "minutes"
 			}
 		}		
-		document.getElementById("sn").innerHTML = d
+		document.getElementById("sn").innerHTML = s
 		document.getElementById("un").innerHTML = u
 		document.getElementById("sl").innerHTML = "seconds"	
+		document.getElementById("to").innerHTML = new Date().getFullYear() + 1
 	}
 }
