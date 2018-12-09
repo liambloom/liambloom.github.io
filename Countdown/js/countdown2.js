@@ -11,7 +11,7 @@ function countdown2(/*yt, mt, dt, ht, mt, st, ut, until, message, bgurl*/) {
 		u = u + "0"
 	}
 	if (t <= 0 && t >= -86400000){
-		document.body.style.backgroundImage ="url('./img/fireworks2.gif')";
+		document.body.style.backgroundImage ="url('../img/fireworks2.gif')";
 		document.getElementById("t").innerHTML = "Happy New Year"
 	}else{
 		if (d > 0){
