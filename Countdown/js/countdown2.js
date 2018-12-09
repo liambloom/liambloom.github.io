@@ -1,5 +1,5 @@
-function countdown2() {
-	var c = new Date(2019, 0, 1, 0, 0, 0, 0).getTime();
+function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
+	var c = new Date(yt, mot, dt, ht, mt, st, ut).getTime();
 	var n = new Date().getTime();
 	var t = c - n;
 	var d = Math.floor(t / 86400000).toString();
@@ -11,8 +11,8 @@ function countdown2() {
 		u = u + "0"
 	}
 	if (t <= 0 && t >= -86400000){
-		document.body.style.backgroundImage ="url('../img/fireworks2.gif')";
-		document.getElementById("t").innerHTML = "Happy New Year"
+		document.body.style.backgroundImage = background//"url('../img/fireworks2.gif')";
+		document.getElementById("t").innerHTML = message
 	}else{
 		if (d > 0){
 			document.getElementById("dn").innerHTML = d
@@ -41,6 +41,6 @@ function countdown2() {
 		document.getElementById("sn").innerHTML = s
 		document.getElementById("un").innerHTML = u
 		document.getElementById("sl").innerHTML = "seconds"	
-		document.getElementById("to").innerHTML = new Date().getFullYear() + 1
+		document.getElementById("to").innerHTML = until //new Date().getFullYear() + 1
 	}
 }
