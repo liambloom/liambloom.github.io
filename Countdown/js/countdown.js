@@ -1,4 +1,17 @@
 function countdown() {
+		var c
+		var text
+		var nextYear
+		var days
+		var daysLeft
+		var MonthDays
+		var monthlist
+		var leap
+		var hoursLeft
+		var minutesLeft
+		var secondsLeft
+		var millisecondsLeft
+		var i
 			c = new Date()
 			nextYear = c.getFullYear() + 1
 			if (c.getFullYear() % 4 == 0 && ((c.gerFullYear() % 1000 == 0) != (c.GetFullYear() % 4000 == 0))) {
@@ -67,6 +80,7 @@ function countdown() {
 					}
 				}
 				document.getElementById("WhatYear").innerHTML = nextYear
+				console.log("this ran")
 			}
 			
 		}
