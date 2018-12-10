@@ -1,4 +1,5 @@
 function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
+	var yfinder = new Date().getFullYear() + 1
 	var c = new Date(yt, mot, dt, ht, mt, st, ut).getTime();
 	var n = new Date().getTime();
 	var t = c - n;
@@ -42,5 +43,6 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 		document.getElementById("un").innerHTML = u
 		document.getElementById("sl").innerHTML = "seconds"	
 		document.getElementById("to").innerHTML = until //new Date().getFullYear() + 1
+		console.log(yfinder, yfinder - 1)
 	}
 }

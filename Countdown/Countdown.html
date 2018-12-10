@@ -22,9 +22,25 @@
 		<span id="to" class=number></span>
 	</p>
 	<script>
+		//var url = window.location.pathname
+		//var getQuery = url.split('?')[1]
+		//var params = getQuery.split('&')
+		//var urlstuff = location.search//-----------------------this works
+		//console.log(url)
+		var info = []
+		var urlstuff = new URLSearchParams(window.location.search)
+		var entries = urlstuff.entries()
+		for(pair of entries) {
+			//console.log(pair[0], pair[1])
+			info.push(pair[1])
+		}
+		//console.log(urlstuff.toString(), urlstuff.entries('year'))
 		setInterval(function() {
-			countdown2(2019, 0, 1, 0, 0, 0, 0, 2019, "Happy New Year", "url('../img/fireworks2.gif')")
+			countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('../img/" + info[9] + ".gif')")
+
 		}, 1)
+		//console.log(location.search)
+
 	</script>
 </body>
 </html>
