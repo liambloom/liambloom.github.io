@@ -7,6 +7,12 @@ body {
 	background-image: url("../img/Hourglass.gif");
  
 }
+a:link {
+	color: #EE2277;
+}
+a:visited {
+	color: #a7145d;
+}
 .number{
 	font-size: 100px;
 	font-weight: bold;
