@@ -29,7 +29,10 @@
 		<a id="Christmas Day"></a><br>
 	</p>
 	<script>
-		changeLink("New Years Day", "0=2019&7=2019&8=Happy+New+Year")
+		var n = new Date()
+		var year = n.getFullYear()
+		var nextYear = year + 1
+		changeLink("New Years Day", "0=" + nextYear + "&7=2019&8=Happy+New+Year")
 	</script>
 </body>
 </html>
