@@ -13,12 +13,15 @@
 		}
 	</style>
 	<script src="./js/changeLink.js"></script>
+	<script src="./js/findDay.js"></script>
+	<script src="./js/findYear.js"></script>
+	<script src="./js/findLast.js"></script>
 </head>
 <body>
 	<h1>Countdown to</h1>
 	<p>
 		<a id="New Years Day"></a><br>
-		<a id="Nartin Luther King Jr. Day"></a><br>
+		<a id="Martin Luther King Jr. Day"></a><br>
 		<a id="George Washington's Birthday"></a><br>
 		<a id="Memorial Day"></a><br>
 		<a id="Independence Day"></a><br>
@@ -30,9 +33,25 @@
 	</p>
 	<script>
 		var n = new Date()
-		var year = n.getFullYear()
-		var nextYear = year + 1
-		changeLink("New Years Day", "0=" + nextYear + "&7=2019&8=Happy+New+Year")
+		//var i
+		/*var mlkjdayfinder = new Date(year, 1, 1, 0, 0, 0, 0)
+		for (i=0, i<3, mlkjdayfinder++) {
+			if (mlkjdayfinder..getDay() == 1) {
+				i++
+			}
+		}
+		var mlkj = mlkjdayfinder*/
+		changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year")
+		changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day")
+		changeLink("George Washington's Birthday", "0=" + findYear(n.getFullYear(), n.getMonth(), 1) + "&1=1&2=" + findDay(findYear(n.getFullYear(), n.getMonth(),  1), 1, 1, 3) + "&7=Presidents'+Day&8=Happy+Presidents'+Day")
+		changeLink("Memorial Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 4) + "&1=4&2=" + findLast(findYear(n.getFullYear(), n.getMonth(), 4), 4, 1) + "&7=Memorial+Day&8=Never+Forget&9=flag")
+		changeLink("Independence Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 6) + "&1=6&2=4&7=Independence+Day&8=Happy+Independence+Day")
+		changeLink("Labor Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 8) + "&1=8&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 8), 8, 1, 1) + "&7=Labor+Day&8=Happy+Labor+Day")
+		changeLink("Columbus Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "&1=9&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&7=Columbus+Day&8=Happy+Columbus+Day&9=ship")
+		changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
+		changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
+		changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
+		//console.log(findDay(year, n.getMonth(), 1, 3), year, n.getMonth)
 	</script>
 </body>
 </html>
