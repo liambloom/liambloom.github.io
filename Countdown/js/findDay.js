@@ -8,6 +8,6 @@ function findDay(year, month, daytofind, th) {
 		}
 		finder.setDate(finder.getDate() + 1)
 	}
-	console.log(finder.getDate() - 1)
+	//console.log(finder.getDate() - 1)
 	return (finder.getDate() - 1)
 }
