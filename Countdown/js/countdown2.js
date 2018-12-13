@@ -22,6 +22,9 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 			}else{
 				document.getElementById("dl").innerHTML = "days"
 			}
+		}else{
+			document.getElementById("dn").innerHTML = ""
+			document.getElementById("dl").innerHTML = ""
 		}
 		if (h > 0){
 			document.getElementById("hn").innerHTML = h
@@ -30,6 +33,9 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 			}else{
 				document.getElementById("hl").innerHTML = "hours"
 			}
+		}else{
+			document.getElementById("hn").innerHTML = ""
+			document.getElementById("hl").innerHTML = ""
 		}
 		if (m > 0){
 			document.getElementById("mn").innerHTML = m
@@ -38,6 +44,9 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 			}else{
 				document.getElementById("ml").innerHTML = "minutes"
 			}
+		}else{
+			document.getElementById("mn").innerHTML = ""
+			document.getElementById("ml").innerHTML = ""
 		}		
 		document.getElementById("sn").innerHTML = s
 		document.getElementById("un").innerHTML = u
