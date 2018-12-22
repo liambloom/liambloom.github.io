@@ -22,7 +22,7 @@
 		<span id="to" class=number></span>
 	</p>
 	<script>
-		var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks"]
+		var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", ""]
 		var urlstuff = new URLSearchParams(window.location.search)
 		var entries = urlstuff.entries()
 		for(pair of entries) {
@@ -31,7 +31,7 @@
 		}
 		//console.log(info[7])
 		setInterval(function() {
-			countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('./img/" + info[9] + ".gif')")
+			countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('./img/" + info[9] + ".gif')", "url('./img/Hourglass" + info[10] + ".gif')")
 
 		}, 1)
 
