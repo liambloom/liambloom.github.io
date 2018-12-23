@@ -223,7 +223,7 @@
 	</p>
 	</div>
 	<script>
-				try{
+		try{
 			var urlinfo = new URLSearchParams(window.location.search);
 			if (urlinfo == ""){
 				document.getElementById("main").innerHTML = "";
@@ -250,9 +250,15 @@
 				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", "Hourglass"];
 				var urlstuff = new URLSearchParams(window.location.search);
 				var entries = urlstuff.entries();
-        var pair;
-				for(pair of entries) {
-					info[pair[0]] = pair[1]	;
+				try{
+					var pair;
+					for(pair of entries) {
+						info[pair[0]] = pair[1];
+					}
+				}catch(err){
+					for(var i=0; i<(entries.length/2); i++){
+						info[entries[i*2]] = entries[(i*2)+1];
+					}
 				}
 				setInterval(function() {
 					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], 'url("./img/' + info[9] + '.gif")');
