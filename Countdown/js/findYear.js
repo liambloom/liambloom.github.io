@@ -1,7 +1,7 @@
 function findYear(year, month, holidayMonth) {
 	if (month <= holidayMonth) {
-		return year
+		return year;
 	}else{
-		return year + 1
+		return year + 1;
 	}
 }

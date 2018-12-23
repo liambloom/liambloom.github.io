@@ -1,37 +1,37 @@
 function Readable() {
 	switch(document.body.style.backgroundImage){
 		case "url(\"./img/Hourglass.gif\")":
-			cssVarChange("#EE2277", "#a7145d", "#0d1532")
+			cssVarChange("#EE2277", "#a7145d", "#0d1532");
 			break;
 		case "url(\"./img/Hourglass2.gif\")":
-			cssVarChange("#70dfbf", "#8cc4e0", "#3f1fcf")
+			cssVarChange("#70dfbf", "#8cc4e0", "#3f1fcf");
 			break;
 		case "url(\"./img/Hourglass3.gif\")":
-			cssVarChange("#1f150c", "#452d13", "#f4f6f5")
+			cssVarChange("#1f150c", "#452d13", "#f4f6f5");
 			break;
 		case "url(\"./img/HourglassChristmas.gif\")":
-			cssVarChange("#2dd2c7", "#24877e", "#0f524d")
+			cssVarChange("#2dd2c7", "#24877e", "#0f524d");
 			break;
 		case "url(\"./img/fireworks.gif\")":
-			cssVarChange("#EE2277", "#a7145d", "#0d1532")
+			cssVarChange("#EE2277", "#a7145d", "#0d1532");
 			break;
 		case "url(\"./img/christmasTree.gif\")":
-			cssVarChange("#70dfbf", "#8cc4e0", "#3f1fcf")
+			cssVarChange("#70dfbf", "#8cc4e0", "#3f1fcf");
 			break;
 		case "url(\"./img/flag.gif\")":
-			cssVarChange("#101020", "#2a2937", "#792127")
+			cssVarChange("#101020", "#2a2937", "#792127");
 			break;
 		case "url(\"./img/ship.gif\")":
-			cssVarChange("#daa520", "#ffd700", "#a6b7c6")
+			cssVarChange("#daa520", "#ffd700", "#a6b7c6");
 			break;
 		case "url(\"./img/turkey.gif\")":
-			cssVarChange("#f8d81d", "#d3be32", "#ef8cb0")
+			cssVarChange("#f8d81d", "#d3be32", "#ef8cb0");
 			break;
 		case "url(\"./img/birthday.gif\")":
-			cssVarChange("#ffffff", "#ffff95", "111111")
+			cssVarChange("#ffffff", "#ffff95", "111111");
 			break;
 		default:
-			cssVarChange("#EE2277", "#a7145d", "#0d1532")
-			alert("Something Broke!")
+			cssVarChange("#EE2277", "#a7145d", "#0d1532");
+			alert("Something Broke!");
 	}
 }
