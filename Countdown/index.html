@@ -5,14 +5,14 @@
 	<title>Countdown</title>
 	<link rel="stylesheet" href="./css/index.css">
 	<!--<link rel="stylesheet" href="./css/css1.css" id="cssCode">-->
-	<style>
+	<!--<style>
 		h1 {
 			font-size: 100px;
 		}
 		p {
 			font-size: 30px;
 		}
-	</style>
+	</style>-->
 	<script src="./js/changeLink.js"></script>
 	<script src="./js/findDay.js"></script>
 	<script src="./js/findYear.js"></script>
@@ -35,6 +35,7 @@
 		<a id="Veterans Day"></a><br>
 		<a id="Thanksgiving Day"></a><br>
 		<a id="Christmas Day"></a><br>
+		<a id="Test"></a><br>
 	</p>
 	<h1>...or make your own</h1>
 	<form>
@@ -204,11 +205,11 @@
 		</select>
 		<img id="end" src="./img/fireworks.gif" style="height: 40px">
 		<br>
- 		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/Hourglass'+ this.value +'.gif)'; Readable(this.value)">
-			<option value="">Default</option>
-			<option value="2">Simple</option>
-			<option value="3">Swirly</option>
-			<option value="Christmas">Christmasy</option>
+ 		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/'+ this.value +'.gif)'; Readable(/*this.value*/)">
+			<option value="Hourglass">Default</option>
+			<option value="Hourglass2">Simple</option>
+			<option value="Hourglass3">Swirly</option>
+			<option value="HourglassChristmas">Christmasy</option>
 		</select>
 		<br>
 		<input type="submit" value="Go!">
@@ -247,27 +248,30 @@
 				changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
 				changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
 				changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
+				changeLink("Test", "0=" + n.getFullYear() + "&1=" + n.getMonth() + "&2=" + n.getDate() + "&3=" + n.getHours() + "&4=" + n.getMinutes() + "&5=" + (n.getSeconds() + 10) + "&7=Results&8=Now")
 				for (i=0; i<=5; i++) {
 					document.getElementById(i).value = n.getFullYear() + i
 					document.getElementById(i).innerHTML = n.getFullYear() + i
 				}
-				console.log("menu ran")
+				//console.log("menu ran")
 			}else{
 				document.getElementById("menu").innerHTML = ""
-				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", ""]
+				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", "Hourglass"]
 				var urlstuff = new URLSearchParams(window.location.search)
 				var entries = urlstuff.entries()
 				for(pair of entries) {
 					info[pair[0]] = pair[1]	
 				}
 				setInterval(function() {
-					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('./img/" + info[9] + ".gif')")
+					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], 'url("./img/' + info[9] + '.gif")')
 				}, 1)
-				Readable(info[10])
-				console.log("main ran")
+				//Readable(/*info[10]*/)
+				document.body.style.backgroundImage = "url(\"./img/" + info[10] + ".gif\")"
+				window.addEventListener('load', function() {Readable()}, false);
+				//console.log("main ran")
 			}
 		}catch(err){
-			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
+			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.\n' + err)){
 				window.location.assign("https://liambloom.github.io/NewYearCountdown2.html")
 			}else{
 				document.getElementById("Labels").innerHTML = ""

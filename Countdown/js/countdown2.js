@@ -1,4 +1,5 @@
 function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
+	//var bg = 0
 	var c = new Date(yt, mot, dt, ht, mt, st, ut).getTime();
 	var n = new Date().getTime();
 	var t = c - n;
@@ -10,9 +11,30 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 	while (u.length < 4) {
 		u = u + "0"
 	}
+	/*if (t == 0){
+		document.body.style.backgroundImage = background
+		do{
+			if (document.body.style.backgroundImage == background){
+				Readable()
+				bg++		
+			}
+			console.log("do while statement is running")
+		}
+		while(bg = 0)
+	}*/
 	if (t <= 0){
 		document.body.style.backgroundImage = background
 		document.getElementById("t").innerHTML = message
+		//do{
+			if (document.body.style.backgroundImage == background){
+				Readable()
+				//bg++
+				//break;
+				//console.log("if then " + bg)
+			}
+			//console.log("do while " + bg)
+		//}
+		//while (bg == 0)
 	}else{
 		if (d > 0){
 			document.getElementById("dn").innerHTML = d
