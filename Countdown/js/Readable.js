@@ -7,10 +7,10 @@ function Readable() {
 			cssVarChange("#70dfbf", "#8cc4e0", "#3f1fcf")
 			break;
 		case "url(\"./img/Hourglass3.gif\")":
-			cssVarChange(/*"#3e2b18"*/"#1f150c", "#452d13", "#f4f6f5")
+			cssVarChange("#1f150c", "#452d13", "#f4f6f5")
 			break;
 		case "url(\"./img/HourglassChristmas.gif\")":
-			cssVarChange(/*"#28beb4"*/"#2dd2c7", "#24877e", "#0f524d")
+			cssVarChange("#2dd2c7", "#24877e", "#0f524d")
 			break;
 		case "url(\"./img/fireworks.gif\")":
 			cssVarChange("#EE2277", "#a7145d", "#0d1532")
