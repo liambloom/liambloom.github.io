@@ -6,10 +6,8 @@ function findLast(year, month, daytofind) {
 		if (finder.getDay() == daytofind) {
 			d++
 			i=0
-			//console.log(finder.getDay())
 		}
 		finder.setDate(finder.getDate() + 1)
 	}
-	//console.log(year, month, daytofind, d, findDay(year, month, daytofind, d))
 	return (findDay(year, month, daytofind, d))
 }

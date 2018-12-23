@@ -24,9 +24,6 @@ a:visited {
 }
 form{
 	font-size: 30px;
-/*	border: 2px solid #a7145d;
-	border-radius: 4px;
-	color: #EE2277;*/
 }
 input{
 	border: 2px solid #a7145d;
@@ -44,7 +41,6 @@ select{
 	background: #0d1532;
 	color: #a7145d;
 	height: 30px;
-	/*margin: 10px;*/
 }
 select:focus{
 	border: 3px solid #EE2277;

@@ -1,5 +1,4 @@
-function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background, hourglass) {
-	//var yfinder = new Date().getFullYear()
+function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background) {
 	var c = new Date(yt, mot, dt, ht, mt, st, ut).getTime();
 	var n = new Date().getTime();
 	var t = c - n;
@@ -11,12 +10,10 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background, ho
 	while (u.length < 4) {
 		u = u + "0"
 	}
-	//console.log(hourglass)
 	if (t <= 0){
-		document.body.style.backgroundImage = background//"url('../img/fireworks2.gif')";
+		document.body.style.backgroundImage = background
 		document.getElementById("t").innerHTML = message
 	}else{
-		document.body.style.backgroundImage = hourglass
 		if (d > 0){
 			document.getElementById("dn").innerHTML = d
 			if (d == 1){
@@ -53,7 +50,6 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background, ho
 		document.getElementById("sn").innerHTML = s
 		document.getElementById("un").innerHTML = u
 		document.getElementById("sl").innerHTML = "seconds"	
-		document.getElementById("to").innerHTML = until //new Date().getFullYear() + 1
-		//console.log(yfinder, yfinder - 1)
+		document.getElementById("to").innerHTML = until
 	}
 }

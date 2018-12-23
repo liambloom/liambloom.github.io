@@ -182,10 +182,6 @@
 			<option value=58>58</option>
 			<option value=59>59</option>
 		</select>
-		<!--<select id="24hour" name="3">
-			<option value="info[3] + 0">AM</option>
-			<option value="info[3] + 12">PM</option>
-		</select>-->
 		<br>
 		Name of event:
 		<input type="text" name=7 id=until >
@@ -228,20 +224,14 @@
 			changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
 			changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
 			changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
-			//document.getElementById("Labels").innerHTML = "The links to pre-made countdowns could not be generated. Please make your own countdown or use a different browser. I apologise for any inconveience"
 			for (i=0; i<=5; i++) {
 				document.getElementById(i).value = n.getFullYear() + i
 				document.getElementById(i).innerHTML = n.getFullYear() + i
 			}
 			if (urlinfo != ""){
-				window.location.assign(/*"https://liambloom.github.io/Countdown/Countdown.html?"*/"./Countdown.html?" + urlinfo)
+				window.location.assign("./Countdown.html?" + urlinfo)
 			}
-			/*setInterval(function() {
-				Readable()
-			}, 1)*/
 		}catch(err){
-		/*	alert("This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience")
-			window.location.assign("https://liambloom.github.io/NewYearCountdown2.html")*/
 			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
 				window.location.assign("https://liambloom.github.io/NewYearCountdown2.html")
 			}else{

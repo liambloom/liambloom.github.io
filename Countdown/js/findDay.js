@@ -4,10 +4,8 @@ function findDay(year, month, daytofind, th) {
 	while (i<th) {
 		if (finder.getDay() == daytofind) {
 			i++
-			//console.log(finder.getDay())
 		}
 		finder.setDate(finder.getDate() + 1)
 	}
-	//console.log(finder.getDate() - 1)
 	return (finder.getDate() - 1)
 }
