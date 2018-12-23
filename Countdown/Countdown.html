@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Countdown</title>
-	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/css1.css" id="cssCode">
 	<script src="./js/countdown2.js"></script>
+	<script src="./js/Readable.js"></script>
 </head>
 <body>
 	<p id="t" class=number>
@@ -27,14 +28,16 @@
 		var entries = urlstuff.entries()
 		for(pair of entries) {
 			info[pair[0]] = pair[1]
-			console.log(pair[0], pair[1])
+			//console.log(pair[0], pair[1])
 		}
-		//console.log(info[7])
+		//console.log(info[10])
 		setInterval(function() {
 			countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('./img/" + info[9] + ".gif')", "url('./img/Hourglass" + info[10] + ".gif')")
 
 		}, 1)
-
+		//console.log("This Can Run")
+		window.addEventListener('load', function() {Readable()}, false);
+		Readable()
 	</script>
 </body>
 </html>

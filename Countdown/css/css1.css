@@ -44,11 +44,16 @@ select{
 	background: #0d1532;
 	color: #a7145d;
 	height: 30px;
-
+	/*margin: 10px;*/
 }
 select:focus{
 	border: 3px solid #EE2277;
 	color: #EE2277;
+}
+img{
+	margin-top: 2px;
+	margin-bottom: -17px;
+	border: 2px solid #EE2277;
 }
 .two{
 	width: 25px;

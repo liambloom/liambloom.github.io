@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Countdowns</title>
-	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/css1.css" id="cssCode">
 	<style>
 		h1 {
 			font-size: 100px;
@@ -16,10 +16,11 @@
 	<script src="./js/findDay.js"></script>
 	<script src="./js/findYear.js"></script>
 	<script src="./js/findLast.js"></script>
+	<script src="./js/Readable.js"></script>
 </head>
-<body>
+<body >
 	<h1>Pick a countdown...</h1>
-	<p>
+	<p id="Labels">
 		<a id="New Years Day"></a><br>
 		<a id="Martin Luther King Jr. Day"></a><br>
 		<a id="George Washington's Birthday"></a><br>
@@ -193,36 +194,58 @@
 		<input type="text" name=8 id=message >
 		<br>
 		Background when timer reaches zero:
-		<select id="background" name=9>
-			<option value=fireworks>Fireworks</option>
-			<option value=christmasTree>Christmas Tree</option>
-			<option value=flag>American Flag</option>
-			<option value=ship>Ship Sailing</option>
-			<option value=turkey>Snoopy's Thanksgiving</option>
+		<select id="background" name=9 onchange="document.getElementById('end').src = './img/' + document.getElementById('background').value + '.gif'">
+			<option value="fireworks">Fireworks</option>
+			<option value="christmasTree">Christmas Tree</option>
+			<option value="flag">American Flag</option>
+			<option value="ship">Ship Sailing</option>
+			<option value="turkey">Snoopy's Thanksgiving</option>
+		</select>
+		<img id="end" src="./img/fireworks.gif" style="height: 40px">
+		<br>
+ 		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/Hourglass'+ document.getElementById('hourglassselect').value +'.gif)'; Readable()">
+			<option value="">Default</option>
+			<option value="2">Simple</option>
+			<option value="3">Swirly</option>
+			<option value="Christmas">Christmasy</option>
 		</select>
 		<br>
 		<input type="submit" value="Go!">
 	</form>
 	<script>
-		var n = new Date()
-		var i
-		var urlinfo = new URLSearchParams(window.location.search)
-		changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year")
-		changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day")
-		changeLink("George Washington's Birthday", "0=" + findYear(n.getFullYear(), n.getMonth(), 1) + "&1=1&2=" + findDay(findYear(n.getFullYear(), n.getMonth(),  1), 1, 1, 3) + "&7=Presidents'+Day&8=Happy+Presidents'+Day")
-		changeLink("Memorial Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 4) + "&1=4&2=" + findLast(findYear(n.getFullYear(), n.getMonth(), 4), 4, 1) + "&7=Memorial+Day&8=Never+Forget&9=flag")
-		changeLink("Independence Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 6) + "&1=6&2=4&7=Independence+Day&8=Happy+Independence+Day")
-		changeLink("Labor Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 8) + "&1=8&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 8), 8, 1, 1) + "&7=Labor+Day&8=Happy+Labor+Day")
-		changeLink("Columbus Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "&1=9&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&7=Columbus+Day&8=Happy+Columbus+Day&9=ship")
-		changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
-		changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
-		changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
-		for (i=0; i<=5; i++) {
-			document.getElementById(i).value = n.getFullYear() + i
-			document.getElementById(i).innerHTML = n.getFullYear() + i
-		}
-		if (urlinfo != ""){
-			window.location.assign("https://liambloom.github.io/Countdown/Countdown.html?" + urlinfo)
+		try{
+			var n = new Date()
+			var i
+			var urlinfo = new URLSearchParams(window.location.search)
+			changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year")
+			changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day")
+			changeLink("George Washington's Birthday", "0=" + findYear(n.getFullYear(), n.getMonth(), 1) + "&1=1&2=" + findDay(findYear(n.getFullYear(), n.getMonth(),  1), 1, 1, 3) + "&7=Presidents'+Day&8=Happy+Presidents'+Day")
+			changeLink("Memorial Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 4) + "&1=4&2=" + findLast(findYear(n.getFullYear(), n.getMonth(), 4), 4, 1) + "&7=Memorial+Day&8=Never+Forget&9=flag")
+			changeLink("Independence Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 6) + "&1=6&2=4&7=Independence+Day&8=Happy+Independence+Day")
+			changeLink("Labor Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 8) + "&1=8&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 8), 8, 1, 1) + "&7=Labor+Day&8=Happy+Labor+Day")
+			changeLink("Columbus Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "&1=9&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&7=Columbus+Day&8=Happy+Columbus+Day&9=ship")
+			changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
+			changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
+			changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
+			//document.getElementById("Labels").innerHTML = "The links to pre-made countdowns could not be generated. Please make your own countdown or use a different browser. I apologise for any inconveience"
+			for (i=0; i<=5; i++) {
+				document.getElementById(i).value = n.getFullYear() + i
+				document.getElementById(i).innerHTML = n.getFullYear() + i
+			}
+			if (urlinfo != ""){
+				window.location.assign("https://liambloom.github.io/Countdown/Countdown.html?" + urlinfo)
+			}
+			/*setInterval(function() {
+				Readable()
+			}, 1)*/
+		}catch(err){
+		/*	alert("This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience")
+			window.location.assign("https://liambloom.github.io/NewYearCountdown2.html")*/
+			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
+				window.location.assign("https://liambloom.github.io/NewYearCountdown2.html")
+			}else{
+				document.getElementById("Labels").innerHTML = ""
+			}
 		}
 	</script>
 </body>

@@ -11,6 +11,7 @@ function countdown2(yt, mot, dt, ht,  mt, st, ut, until, message, background, ho
 	while (u.length < 4) {
 		u = u + "0"
 	}
+	//console.log(hourglass)
 	if (t <= 0){
 		document.body.style.backgroundImage = background//"url('../img/fireworks2.gif')";
 		document.getElementById("t").innerHTML = message
