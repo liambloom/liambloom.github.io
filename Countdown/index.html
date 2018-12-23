@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Countdown</title>
@@ -269,7 +269,7 @@
 				//console.log("main ran")
 			}
 		}catch(err){
-			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.\n' + err)){
+			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
 				window.location.assign("https://liambloom.github.io/NewYearCountdown2.html");
 			}else{
 				document.getElementById("Labels").innerHTML = "";
