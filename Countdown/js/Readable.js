@@ -1,15 +1,15 @@
-function Readable() {
-	switch(document.body.style.backgroundImage){
+function Readable(theme) {
+	switch(/*document.body.style.backgroundImage*/theme){
 		/*case 'url("./img/Hourglass.gif")':
 			document.getElementById('cssCode').setAttribute('href', './css/css1.css');
 			break;*/
-		case 'url("./img/Hourglass2.gif")':
+		case '2':
 			document.getElementById('cssCode').setAttribute('href', './css/css2.css');
 			break;
-		case 'url("./img/Hourglass3.gif")':
+		case '3':
 			document.getElementById('cssCode').setAttribute('href', './css/css3.css');
 			break;
-		case 'url("./img/HourglassChristmas.gif")':
+		case 'Christmas':
 			document.getElementById('cssCode').setAttribute('href', './css/cssC.css');
 			break;
 		default:

@@ -194,7 +194,7 @@
 		<input type="text" name=8 id=message >
 		<br>
 		Background when timer reaches zero:
-		<select id="background" name=9 onchange="document.getElementById('end').src = './img/' + document.getElementById('background').value + '.gif'">
+		<select id="background" name=9 onchange="document.getElementById('end').src = './img/' + this.value + '.gif'">
 			<option value="fireworks">Fireworks</option>
 			<option value="christmasTree">Christmas Tree</option>
 			<option value="flag">American Flag</option>
@@ -204,7 +204,7 @@
 		</select>
 		<img id="end" src="./img/fireworks.gif" style="height: 40px">
 		<br>
- 		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/Hourglass'+ document.getElementById('hourglassselect').value +'.gif)'; Readable()">
+ 		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/Hourglass'+ this.value +'.gif)'; Readable(this.value)">
 			<option value="">Default</option>
 			<option value="2">Simple</option>
 			<option value="3">Swirly</option>
@@ -234,7 +234,7 @@
 				document.getElementById(i).innerHTML = n.getFullYear() + i
 			}
 			if (urlinfo != ""){
-				window.location.assign("https://liambloom.github.io/Countdown/Countdown.html?" + urlinfo)
+				window.location.assign(/*"https://liambloom.github.io/Countdown/Countdown.html?"*/"./Countdown.html?" + urlinfo)
 			}
 			/*setInterval(function() {
 				Readable()
