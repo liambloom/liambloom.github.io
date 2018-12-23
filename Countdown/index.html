@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Countdowns</title>
+	<title>Countdown</title>
 	<link rel="stylesheet" href="./css/css1.css" id="cssCode">
 	<style>
 		h1 {
@@ -17,8 +17,10 @@
 	<script src="./js/findYear.js"></script>
 	<script src="./js/findLast.js"></script>
 	<script src="./js/Readable.js"></script>
+	<script src="./js/countdown2.js"></script>
 </head>
-<body >
+<body>
+	<div id="menu">
 	<h1>Pick a countdown...</h1>
 	<p id="Labels">
 		<a id="New Years Day"></a><br>
@@ -209,27 +211,58 @@
 		<br>
 		<input type="submit" value="Go!">
 	</form>
+	</div>
+	<div id="main">
+	<p id="t" class=number>
+		<span id="dn" class=number></span>
+		<span id="dl" class=label></span>
+		<span id="hn" class=number></span>
+		<span id="hl" class=label></span>
+		<span id="mn" class=number></span>
+		<span id="ml" class=label></span>
+		<span id="sn" class=number></span>
+		<span id="un" class=smallNumber></span>
+		<span id="sl" class=label></span>
+		<br>
+		<span class=label>until</span>
+		<span id="to" class=number></span>
+	</p>
+	</div>
 	<script>
 		try{
-			var n = new Date()
-			var i
 			var urlinfo = new URLSearchParams(window.location.search)
-			changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year")
-			changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day")
-			changeLink("George Washington's Birthday", "0=" + findYear(n.getFullYear(), n.getMonth(), 1) + "&1=1&2=" + findDay(findYear(n.getFullYear(), n.getMonth(),  1), 1, 1, 3) + "&7=Presidents'+Day&8=Happy+Presidents'+Day")
-			changeLink("Memorial Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 4) + "&1=4&2=" + findLast(findYear(n.getFullYear(), n.getMonth(), 4), 4, 1) + "&7=Memorial+Day&8=Never+Forget&9=flag")
-			changeLink("Independence Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 6) + "&1=6&2=4&7=Independence+Day&8=Happy+Independence+Day")
-			changeLink("Labor Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 8) + "&1=8&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 8), 8, 1, 1) + "&7=Labor+Day&8=Happy+Labor+Day")
-			changeLink("Columbus Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "&1=9&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&7=Columbus+Day&8=Happy+Columbus+Day&9=ship")
-			changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
-			changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
-			changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
-			for (i=0; i<=5; i++) {
-				document.getElementById(i).value = n.getFullYear() + i
-				document.getElementById(i).innerHTML = n.getFullYear() + i
-			}
-			if (urlinfo != ""){
-				window.location.assign("./Countdown.html?" + urlinfo)
+			if (urlinfo == ""){
+				document.getElementById("main").innerHTML = ""
+				var n = new Date()
+				var i
+				changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year")
+				changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day")
+				changeLink("George Washington's Birthday", "0=" + findYear(n.getFullYear(), n.getMonth(), 1) + "&1=1&2=" + findDay(findYear(n.getFullYear(), n.getMonth(),  1), 1, 1, 3) + "&7=Presidents'+Day&8=Happy+Presidents'+Day")
+				changeLink("Memorial Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 4) + "&1=4&2=" + findLast(findYear(n.getFullYear(), n.getMonth(), 4), 4, 1) + "&7=Memorial+Day&8=Never+Forget&9=flag")
+				changeLink("Independence Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 6) + "&1=6&2=4&7=Independence+Day&8=Happy+Independence+Day")
+				changeLink("Labor Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 8) + "&1=8&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 8), 8, 1, 1) + "&7=Labor+Day&8=Happy+Labor+Day")
+				changeLink("Columbus Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "&1=9&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&7=Columbus+Day&8=Happy+Columbus+Day&9=ship")
+				changeLink("Veterans Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag")
+				changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey")
+				changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree")
+				for (i=0; i<=5; i++) {
+					document.getElementById(i).value = n.getFullYear() + i
+					document.getElementById(i).innerHTML = n.getFullYear() + i
+				}
+				console.log("menu ran")
+			}else{
+				document.getElementById("menu").innerHTML = ""
+				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", ""]
+				var urlstuff = new URLSearchParams(window.location.search)
+				var entries = urlstuff.entries()
+				for(pair of entries) {
+					info[pair[0]] = pair[1]	
+				}
+				setInterval(function() {
+					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], "url('./img/" + info[9] + ".gif')")
+				}, 1)
+				Readable(info[10])
+				console.log("main ran")
 			}
 		}catch(err){
 			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
