@@ -245,7 +245,6 @@
 					document.getElementById(i).value = n.getFullYear() + i;
 					document.getElementById(i).innerHTML = n.getFullYear() + i;
 				}
-				//console.log("menu ran")
 			}else{
 				document.getElementById("menu").innerHTML = "";
 				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", "Hourglass"];
@@ -264,10 +263,8 @@
 				setInterval(function() {
 					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], 'url("./img/' + info[9] + '.gif")');
 				}, 1);
-				//Readable(/*info[10]*/)
 				document.body.style.backgroundImage = "url(\"./img/" + info[10] + ".gif\")";
 				window.addEventListener('load', function() {Readable();}, false);
-				//console.log("main ran")
 				window.addEventListener('load', function() {
 					if(document.getElementById("New Years Day").innerHTML == ""){
 						Redirect("Error: Links did not load");
