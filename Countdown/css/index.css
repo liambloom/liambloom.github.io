@@ -17,6 +17,39 @@ h1 {
 p {
 	font-size: 30px;
 }
+/*#HourglassMenu{
+
+}*/
+.popup{
+	border: 2px solid var(--primary);
+	background: var(--tertiary);
+	/*color: var(--primary);*/
+	padding: 15px;
+	/*vertical-align: -125px;*/
+	font-size: 15px;
+	position: fixed;
+	position: -webkit-fixed;
+	top: 10px;
+	right: 10px;
+	/*width: 250px;
+	height: 250px;*/
+}
+.x{
+	margin: 0px;
+	/*float: right;*/
+	background-color: transparent;
+	color: #bbbbbb;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	top: 0px;
+	right: 0px;
+	position: absolute;
+}
+.x:hover{
+	background-color: #ff0000;
+	color: #ffffff;
+}
 a:link {
 	color: var(--primary);
 }
@@ -42,25 +75,10 @@ input{
 	background: var(--tertiary);
 	color: var(--primary);
 	height: 30px;
+	margin: 1px;
 }
 input:focus{
 	border: 3px solid var(--primary);
-}
-select{
-	border: 2px solid var(--secondary);
-	border-radius: 4px;
-	background: var(--tertiary);
-	color: var(--secondary);
-	height: 30px;
-}
-select:focus{
-	border: 3px solid var(--primary);
-	color: var(--primary);
-}
-img{
-	margin-top: 2px;
-	margin-bottom: -17px;
-	border: 2px solid var(--primary);
 }
 .two{
 	width: 25px;
@@ -70,4 +88,21 @@ img{
 }
 .four{
 	width: 35px;
+}
+select{
+	border: 2px solid var(--secondary);
+	border-radius: 4px;
+	background: var(--tertiary);
+	color: var(--secondary);
+	margin: 1px;
+	height: 30px
+}
+select:focus{
+	border: 3px solid var(--primary);
+	color: var(--primary);
+}
+img{
+	margin-top: 2px;
+	margin-bottom: -17px;
+	border: 2px solid var(--primary);
 }

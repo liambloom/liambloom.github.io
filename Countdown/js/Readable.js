@@ -63,6 +63,7 @@ function Readable() {
 			break;
 		default:
 			cssVarChange("#EE2277", "#a7145d", "#0d1532");
-			alert("Something Broke!\n" + document.body.style.backgroundImage);
+			document.body.style.backgroundImage = 'url(\"./img/Hourglass.gif\")'
+			//alert("Something Broke!\n" + document.body.style.backgroundImage);
 	}
 }

@@ -12,9 +12,26 @@
 	<script src="./js/cssVarChange.js"></script>
 	<script src="./js/Redirect.js"></script>
 	<script src="./js/makeDropdown.js"></script>
+	<script src="./js/destroy.js"></script>
 	<script src="./js/countdown2.js"></script>
 </head>
 <body>
+	<div id="hourglassMenu" class="popup">
+		<div class="x" onclick="destroy('hourglassMenu')">
+			×
+		</div>
+		<!--<br>-->
+		Pick an hourglass for the background:
+		<br>
+		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/'+ this.value +'.gif)'; Readable()">
+			<option value="Hourglass">Default</option>
+			<option value="Hourglass2">Simple</option>
+			<option value="Hourglass3">Swirly</option>
+			<option value="HourglassChristmas">Christmasy</option>
+		</select>
+		<br>
+		<input type="button" value="Set Background" onclick="" id="hourglassSubmit">
+	</div>
 	<div id="menu">
 	<h1>Pick a countdown...</h1>
 	<p id="Labels">
@@ -78,14 +95,15 @@
 		</select>
 		<img id="end" src="./img/fireworks.gif" style="height: 40px">
 		<br>
-		Hourglass in background:
+		<!--Hourglass in background:
  		<select id="hourglassselect" name=10 onchange="document.body.style.backgroundImage = 'url(./img/'+ this.value +'.gif)'; Readable()">
 			<option value="Hourglass">Default</option>
 			<option value="Hourglass2">Simple</option>
 			<option value="Hourglass3">Swirly</option>
 			<option value="HourglassChristmas">Christmasy</option>
 		</select>
-		<br>
+		<br>-->
+		<input type="hidden" id="hourglassSave" name="10">
 		<input type="submit" value="Go!">
 	</form>
 	</div>
@@ -108,8 +126,21 @@
 	<script>
 		try{
 			var urlinfo = new URLSearchParams(window.location.search);
+			var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", undefined];
+			var urlstuff = new URLSearchParams(window.location.search);
+			var entries = urlstuff.entries();
+			try{
+				var pair;
+				for(pair of entries) {
+					info[pair[0]] = pair[1];
+				}
+			}catch(err){
+				for(var i=0; i<(entries.length/2); i++){
+					info[entries[i*2]] = entries[(i*2)+1];
+				}
+			}
 			if (urlinfo == ""){
-				document.getElementById("main").innerHTML = "";
+				destroy("main")
 				var n = new Date();
 				changeLink("New Years Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&7=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&8=Happy+New+Year");
 				changeLink("Martin Luther King Jr. Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&1=0&2=" + findDay(findYear(n.getFullYear(), n.getMonth(), 0), 0, 1, 3) + "&7=Martin+Luther+King+Jr.+Day&8=Happy+Martin+Luther+King+Jr.+Day");
@@ -127,20 +158,8 @@
 				makeDropdown("hour", 1, 23, 1);
 				makeDropdown("minute", 0, 59, 2);
 			}else{
-				document.getElementById("menu").innerHTML = "";
-				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", "Hourglass"];
-				var urlstuff = new URLSearchParams(window.location.search);
-				var entries = urlstuff.entries();
-				try{
-					var pair;
-					for(pair of entries) {
-						info[pair[0]] = pair[1];
-					}
-				}catch(err){
-					for(var i=0; i<(entries.length/2); i++){
-						info[entries[i*2]] = entries[(i*2)+1];
-					}
-				}
+				destroy("menu")
+				
 				setInterval(function() {
 					countdown2(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8], 'url("./img/' + info[9] + '.gif")');
 				}, 1);
@@ -152,7 +171,18 @@
 					}
 				}, false);
 			}
-			
+			if(info[10] != undefined && info[10] != ""){
+				destroy("hourglassMenu")
+			}else{
+				document.getElementById("hourglassSubmit").onclick = function() {
+					if (document.getElementById('hourglassSave')) {
+						document.getElementById('hourglassSave').value = document.getElementById("hourglassselect").value
+					}else{
+						window.location.assign("?" + urlinfo + document.getElementById("hourglassselect").value)
+					}
+					destroy('hourglassMenu')
+				}
+			}
 			try{
 				window.addEventListener('load', function() {
 					if(!(CSS.supports('color', 'var(--fake-var)'))){
