@@ -32,6 +32,6 @@ function Readable() {
 			break;
 		default:
 			cssVarChange("#EE2277", "#a7145d", "#0d1532");
-			alert("Something Broke!");
+			alert("Something Broke!\n" + document.body.style.backgroundImage);
 	}
 }
