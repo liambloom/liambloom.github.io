@@ -10,6 +10,7 @@
 	<script src="./js/findLast.js"></script>
 	<script src="./js/Readable.js"></script>
 	<script src="./js/cssVarChange.js"></script>
+	<script src="./js/Redirect.js"></script>
 	<script src="./js/countdown2.js"></script>
 </head>
 <body>
@@ -267,13 +268,24 @@
 				document.body.style.backgroundImage = "url(\"./img/" + info[10] + ".gif\")";
 				window.addEventListener('load', function() {Readable();}, false);
 				//console.log("main ran")
+				window.addEventListener('load', function() {
+					if(document.getElementById("New Years Day").innerHTML == ""){
+						Redirect("Error: Links did not load");
+					}
+				}, false);
 			}
+			
+			try{
+				window.addEventListener('load', function() {
+					if(!(CSS.supports('color', 'var(--fake-var)'))){
+						Redirect("Error: CSS variables are not supported");
+					}
+				}, false);
+			}catch(err){
+					Redirect("Error: CSS variables are not supported");
+				}
 		}catch(err){
-			if (window.confirm('This version of the countdown is not supported in your browser. You will be redirected to an earlier version of the countdown program. I apologise for any inconvenience.')){
-				window.location.assign("https://liambloom.github.io/NewYearCountdown2.html");
-			}else{
-				document.getElementById("Labels").innerHTML = "";
-			}
+			Redirect(err);
 		}
 	</script>
 </body>
