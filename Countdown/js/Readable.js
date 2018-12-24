@@ -30,6 +30,7 @@ function Readable() {
 		case "url(\"./img/birthday.gif\")":
 			cssVarChange("#ffffff", "#ffff95", "111111");
 			break;
+		//and now I repeat the code because apple hates following standards
 		case "url(\"https://liambloom.github.io/Countdown/img/Hourglass.gif\")":
 			cssVarChange("#EE2277", "#a7145d", "#0d1532");
 			break;
