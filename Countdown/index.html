@@ -121,10 +121,10 @@
 				changeLink("Thanksgiving Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey");
 				changeLink("Christmas Day", "0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree");
 				changeLink("Test", "0=" + n.getFullYear() + "&1=" + n.getMonth() + "&2=" + n.getDate() + "&3=" + n.getHours() + "&4=" + n.getMinutes() + "&5=" + (n.getSeconds() + 10) + "&7=Results&8=Now");
-				makeDropdown("day", 1, 31, 1)
-				makeDropdown("year", n.getFullYear(), n.getFullYear() + 5, 1)
-				makeDropdown("hour", 1, 23, 1)
-				makeDropdown("minute", 0, 59, 2)
+				makeDropdown("day", 1, 31, 1);
+				makeDropdown("year", n.getFullYear(), n.getFullYear() + 5, 1);
+				makeDropdown("hour", 1, 23, 1);
+				makeDropdown("minute", 0, 59, 2);
 			}else{
 				document.getElementById("menu").innerHTML = "";
 				var info = [1970, 0, 1, 0, 0, 0, 0, "Something Happens", "Something Happened", "fireworks", "Hourglass"];
