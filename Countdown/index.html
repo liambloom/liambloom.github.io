@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<title>Countdown</title>
 	<link rel="stylesheet" href="./css/index.css">
-	<script src="./js/changeLink.js"></script>
 	<script src="./js/findDay.js"></script>
 	<script src="./js/findYear.js"></script>
 	<script src="./js/findLast.js"></script>
@@ -153,11 +152,16 @@
 				document.getElementById("VeteransDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=11&7=Veterans+Day&8=Never+Forget&9=flag";
 				document.getElementById("ThanksgivingDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "&1=10&2=" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&7=Thanksgiving&8=Happy+Thanksgiving&9=turkey";
 				document.getElementById("ChristmasDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree";
-				document.getElementById("Test").href = "?0=" + n.getFullYear() + "&1=" + n.getMonth() + "&2=" + n.getDate() + "&3=" + n.getHours() + "&4=" + n.getMinutes() + "&5=" + (n.getSeconds() + 10) + "&7=Results&8=Now";
+				document.getElementById("Test").href = "?0=" + n.getFullYear() + "&1=" + n.getMonth() + "&2=" + n.getDate() + "&3=" + n.getHours() + "&4=" + n.getMinutes() + "&5=" + (n.getSeconds() + 15) + "&7=Results&8=Now";
 				makeDropdown("day", 1, 31, 1);
 				makeDropdown("year", n.getFullYear(), n.getFullYear() + 5, 1);
 				makeDropdown("hour", 1, 23, 1);
 				makeDropdown("minute", 0, 59, 2);
+				window.addEventListener('load', function() {
+					if(document.getElementById("NewYearsDay").href == ""){
+						Redirect("Error: Links did not load");
+					}
+				}, false);
 			}else{
 				destroy("menu")
 				setInterval(function() {
@@ -165,27 +169,26 @@
 				}, 1);
 				document.body.style.backgroundImage = "url(\"./img/" + info[10] + ".gif\")";
 				window.addEventListener('load', function() {Readable();}, false);
-				window.addEventListener('load', function() {
-					if(document.getElementById("New Years Day").innerHTML == ""){
-						Redirect("Error: Links did not load");
-					}
-				}, false);
 				if(info[10] != undefined && info[10] != ""){
 					destroy("hourglassMenu")
 				}
 			}
-				var linkslist = ["NewYearsDay", "MartinLutherKingJrDay", "GeorgeWashingtonsBirthday", "MemorialDay", "IndependenceDay", "LaborDay", "ColumbusDay", "VeteransDay", "ThanksgivingDay", "ChristmasDay", "Test"]
-				document.getElementById("hourglassSubmit").onclick = function() {
-					if (document.getElementById('hourglassSave')) {
-						document.getElementById('hourglassSave').value = document.getElementById("hourglassselect").value
-						linkAdd(linkslist, 11, "&10=" + document.getElementById("hourglassselect").value);
-					}else{
-						window.location.assign("?" + urlinfo + document.getElementById("hourglassselect").value);
-
-					}
+				try{
+					var linkslist = ["NewYearsDay", "MartinLutherKingJrDay", "GeorgeWashingtonsBirthday", "MemorialDay", "IndependenceDay", "LaborDay", "ColumbusDay", "VeteransDay", "ThanksgivingDay", "ChristmasDay", "Test"]
+					document.getElementById("hourglassSubmit").onclick = function() {
+						if (document.getElementById('hourglassSave')) {
+							document.getElementById('hourglassSave').value = document.getElementById("hourglassselect").value
+							linkAdd(linkslist, 11, "&10=" + document.getElementById("hourglassselect").value);
+						}else{
+							window.location.assign("?" + urlinfo + document.getElementById("hourglassselect").value);
+						}
 					destroy('hourglassMenu')
 					//alert("this ran")
+					}
+				}catch(err){
+					
 				}
+				//}
 			try{
 				window.addEventListener('load', function() {
 					if(!(CSS.supports('color', 'var(--fake-var)'))){
