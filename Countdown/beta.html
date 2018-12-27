@@ -153,7 +153,7 @@
 							document.getElementById('hourglassSave').value = document.getElementById("hourglassselect").value
 							linkAdd(linkslist, 11, "&7=" + document.getElementById("hourglassselect").value);
 						}else{
-							window.location.assign("?" + urlinfo + document.getElementById("hourglassselect").value);
+							window.location.assign("?" + urlinfo + "&7=" + document.getElementById("hourglassselect").value);
 						}
 					destroy('hourglassMenu')
 					}
