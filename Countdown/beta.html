@@ -128,8 +128,8 @@
 				document.getElementById("ColumbusDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 9) + "-10-" + findDay(findYear(n.getFullYear(), n.getMonth(), 9), 9, 1, 2) + "&4=Columbus+Day&5=Happy+Columbus+Day&6=ship";
 				document.getElementById("VeteransDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "-11-11&4=Veterans+Day&5=Never+Forget&6=flag";
 				document.getElementById("ThanksgivingDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 10) + "-11-" + findDay(findYear(n.getFullYear(), n.getMonth, 10), 10, 4, 4) + "&4=Thanksgiving&5=Happy+Thanksgiving&6=turkey";
-				document.getElementById("ChristmasDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "&1=11&2=25&7=Christmas&8=Merry+Christmas&9=christmasTree";
-				document.getElementById("Test").href = "?0=" + n.getFullYear() + "&1=" + n.getMonth() + "&2=" + n.getDate() + "&3=" + n.getHours() + "&4=" + n.getMinutes() + "&5=" + (n.getSeconds() + 15) + "&7=Results&8=Now";
+				document.getElementById("ChristmasDay").href = "?0=" + findYear(n.getFullYear(), n.getMonth(), 11) + "-12-25&4=Christmas&5=Merry+Christmas&6=christmasTree";
+				document.getElementById("Test").href = "?0=" + n.getFullYear() + "-" + n.getMonth() + "-" + n.getDate() + "&1=" + n.getHours() + ":" + n.getMinutes() + "&2=" + (n.getSeconds() + 15) + "&4=Results&5=Now";
 				window.addEventListener('load', function() {
 					if(document.getElementById("NewYearsDay").href == ""){
 						Redirect("Error: Links did not load");
