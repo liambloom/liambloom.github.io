@@ -73,4 +73,5 @@ function change() {
 
 	//color change
 	hexdec = "#" + hr + hg + hb
+	return hexdec
 }
