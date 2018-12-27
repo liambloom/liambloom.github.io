@@ -37,13 +37,13 @@ p {
 	left: 0px;
 	right: 0px;
 	width: 100%;
+	padding: 15px;
 }
 .warning{
 	border: 2px solid #000000;
 	/*background: var(--tertiary);*/
 	background: #eeee00;
 	color: #000000;
-	padding: 15px;
 	font-size: 15px;
 }
 .x{
