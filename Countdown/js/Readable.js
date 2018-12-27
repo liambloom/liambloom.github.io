@@ -35,5 +35,5 @@ function Readable() {
 			//cssVarChange("#EE2277", "#a7145d", "#0d1532");
 			//document.body.style.backgroundImage = 'url(\"./img/Hourglass.gif\")'
 	}
-	//alert("Readable Ran")
+	console.log("Readable Ran")
 }
