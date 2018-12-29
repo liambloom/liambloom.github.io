@@ -134,7 +134,17 @@
 			if (urlinfo == ""){
 				destroy("main")
 				var n = new Date();
-				links("all")
+				document.getElementById("NewYearsDay").href = links(0)
+				document.getElementById("MartinLutherKingJrDay").href = links(1)
+				document.getElementById("GeorgeWashingtonsBirthday").href = links(2)
+				document.getElementById("MemorialDay").href = links(3)
+				document.getElementById("IndependenceDay").href = links(4)
+				document.getElementById("LaborDay").href = links(5)
+				document.getElementById("ColumbusDay").href = links(6)
+				document.getElementById("VeteransDay").href = links(7)
+				document.getElementById("ThanksgivingDay").href = links(8)
+				document.getElementById("ChristmasDay").href = links(9)
+				document.getElementById("Test").href = links(10)
 				makeDropdown("day", 1, 31, 1);
 				makeDropdown("year", n.getFullYear(), n.getFullYear() + 5, 1);
 				makeDropdown("hour", 1, 23, 1);
