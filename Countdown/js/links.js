@@ -1,4 +1,5 @@
-function links(index, add) {
+function linksMaker(index, add) {
+	var n = new Date();
 	switch(index){
 		case 0:
 			return add + "?0=" + findYear(n.getFullYear(), n.getMonth(), 0) + "-01-01&4=" + findYear(n.getFullYear(), n.getMonth(), 0) + "&5=Happy+New+Year";
