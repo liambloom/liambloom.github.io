@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
-<body>
+function addNav() {
+	document.write(`
 <header id="topMenu">
 	<script src="https://liambloom.github.io/Countdown/js/findDay.js"></script>
 	<script src="https://liambloom.github.io/Countdown/js/findYear.js"></script>
@@ -122,5 +121,5 @@
 		</li>
 	</ul>
 </header>
-</body>
-</html>
+	`)
+}
