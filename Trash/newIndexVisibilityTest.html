@@ -9,7 +9,7 @@
 			color: #67d8ef;
 			background-color: #282923;
 		}*/
-		header.header{
+		header{
 			position: fixed;
 			top: 0px;
 			left: 0px;
@@ -20,207 +20,217 @@
 			background-color: #282923;
 			width: 100%;
 		}
-		h1.header{
+		h1{
 			margin-top: 0px;
 			font-style: italic;
 			font-weight: bolder;
 			font-size: 50px;
 			font-family: Arial, Helvetica, sans-serif;
 		}
-		table.header, th.header, tr.header, td.header{
+		table, th, tr, td{
 			text-align: left;
-			border: 2px solid transparent;
+			border: 2px solid white;
 			border-collapse: collapse;
 			padding: 15px;
 		}
-		td.header{
+		td/*.dropdowntable*/{
 			vertical-align: top;
 		}
-		div.dropdowntableheader{
+		/*td*/div.dropdowntable{
 			padding: 0px;
 			padding-right: none;
 			/*width: 100px;*/
 			display: inline-flex;
 			position: relative;
 		}
-		a.header{
+		a{
 			color: #67d8ef;
 			text-decoration: none;
 		}
-		.menuOptionHeader{
-			display: none;
+		.menuOption{
+			visibility: collapse;
 		}
 		span.super{
 			vertical-align: super;
 			font-style: italic;
 			color: #e79622;
 		}
+		/*unused{
+			color: #9e80ff;
+			color: #f9245e;
+			color: #88e22b;
+		}
 	</style>
+	<script src="./js/ColorChange.js"></script>
 </head>
 <body>
-	<header class="header">
-		<h1 class="header"><span style="vertical-align: super;">LIAM</span><span class="super" style="vertical-align: sub;">BLOOM</span></h1>
-			<div class="dropdowntableheader">
-					<table class="header" id="mainMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
-						<tr class="header">
-							<th class="header">
-								<a class="header" href="https://liambloom.github.io/index.html">Main</a>
+	<header>
+		<h1><span style="vertical-align: super;">LIAM</span><span class="super" style="vertical-align: sub;">BLOOM</span></h1>
+		<!--<table>
+			<tr>
+				<td--><div class="dropdowntable">
+					<table id="mainMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
+						<tr>
+							<th>
+								<a href="https://liambloom.github.io/index.html">Main</a>
 							</th>
 						</tr>
-						<tr class="header menuOptionHeader mainMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/MagicEight.html">Magic Eight Ball</a>
+						<tr class="menuOption mainMenu">
+							<td>
+								<a href="https://liambloom.github.io/MagicEight.html">Magic Eight Ball</a>
 							</td>
 						</tr>
-						<tr class="header menuOptionHeader mainMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/RandomColor.html">Random Color</a>
+						<tr class="menuOption mainMenu">
+							<td>
+								<a href="https://liambloom.github.io/RandomColor.html">Random Color</a>
 							</td>
 						</tr>
-						<tr class="header menuOptionHeader mainMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/GradientColor.html">Gradient Color</a>
+						<tr class="menuOption mainMenu">
+							<td>
+								<a href="https://liambloom.github.io/GradientColor.html">Gradient Color</a>
+							</td>
+						</tr>
+					</table>
+				</div><!--</td>
+				<td--><div class="dropdowntable">
+					<table id="countdownMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
+						<tr>
+							<th>
+								<a href="https://liambloom.github.io/Countdown/index.html">Countdown</a>
+							</th>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="NewYearsDay">New Years Day</a>
+							</td>
+							<td>
+								<a id="MartinLutherKingJrDay">Martin Luther King Jr. Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="GeorgeWashingtonsBirthday">George Washington's Birthday</a>
+							</td>
+							<td>
+								<a id="MemorialDay">Memorial Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="IndependenceDay">Independence Day</a>
+							</td>
+							<td>
+								<a id="LaborDay">Labor Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="ColumbusDay">Columbus Day</a>
+							</td>
+							<td>
+								<a id="VeteransDay">Veterans Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="ThanksgivingDay">Thanksgiving Day</a>
+							</td>
+							<td>
+								<a id="ChristmasDay">Christmas Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption countdownMenu">
+							<td>
+								<a id="Test">Test</a>
+							</td>
+						</tr>
+					</table>
+				</div><!--</td>
+				<td--><div class="dropdowntable">
+					<table id="betacountdownMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
+						<tr>
+							<th>
+								<a href="https://liambloom.github.io/Countdown/beta.html">Countdown<span class="super">beta</span></a>
+							</th>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="NewYearsDaybeta">New Years Day</a>
+							</td>
+							<td>
+								<a id="MartinLutherKingJrDaybeta">Martin Luther King Jr. Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="GeorgeWashingtonsBirthdaybeta">George Washington's Birthday</a>
+							</td>
+							<td>
+								<a id="MemorialDaybeta">Memorial Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="IndependenceDaybeta">Independence Day</a>
+							</td>
+							<td>
+								<a id="LaborDaybeta">Labor Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="ColumbusDaybeta">Columbus Day</a>
+							</td>
+							<td>
+								<a id="VeteransDaybeta">Veterans Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="ThanksgivingDaybeta">Thanksgiving Day</a>
+							</td>
+							<td>
+								<a id="ChristmasDaybeta">Christmas Day</a>
+							</td>
+						</tr>
+						<tr class="menuOption betacountdownMenu">
+							<td>
+								<a id="Testbeta">Test</a>
+							</td>
+						</tr>
+					</table>
+				</div><!--</td>
+				<td--><div class="dropdowntable">
+					<table id="schoolMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
+						<tr>
+							<th>
+								<a href="https://liambloom.github.io/school/index.html">School</a>
+							</th>
+						</tr>
+						<tr class="menuOption schoolMenu">
+							<td>
+								<a href="https://liambloom.github.io/school/SocialStudiesProject.html">Ancient Egyptian Social Class Project</a>
+							</td>
+						</tr>
+						<tr class="menuOption schoolMenu">
+							<td>
+								<a href="https://liambloom.github.io/school/ScienceVocab.html">Science Vocab</a>
+							</td>
+						</tr>
+						<tr class="menuOption schoolMenu">
+							<td>
+								<a href="https://liambloom.github.io/school/ELAgreekMythologyScript.html">Greek Mythology Play Script</a>
+							</td>
+						</tr>
+						<tr class="menuOption schoolMenu">
+							<td>
+								<a href="https://liambloom.github.io/school/ScratchPrometheus.html">Prometheus Cartoon</a>
 							</td>
 						</tr>
 					</table>
 				</div>
-				<div class="dropdowntableheader">
-					<table class="header" id="countdownMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
-						<tr class="header">
-							<th class="header">
-								<a class="header" href="https://liambloom.github.io/Countdown/index.html">Countdown</a>
-							</th>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="NewYearsDay">New Years Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="MartinLutherKingJrDay">Martin Luther King Jr. Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="GeorgeWashingtonsBirthday">George Washington's Birthday</a>
-							</td>
-							<td class="header">
-								<a class="header" id="MemorialDay">Memorial Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="IndependenceDay">Independence Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="LaborDay">Labor Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="ColumbusDay">Columbus Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="VeteransDay">Veterans Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="ThanksgivingDay">Thanksgiving Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="ChristmasDay">Christmas Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader countdownMenu">
-							<td class="header">
-								<a class="header" id="Test">Test</a>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="dropdowntableheader">
-					<table class="header" id="betacountdownMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
-						<tr class="header">
-							<th class="header">
-								<a class="header" href="https://liambloom.github.io/Countdown/beta.html">Countdown<span class="super">beta</span></a>
-							</th>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="NewYearsDaybeta">New Years Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="MartinLutherKingJrDaybeta">Martin Luther King Jr. Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="GeorgeWashingtonsBirthdaybeta">George Washington's Birthday</a>
-							</td>
-							<td class="header">
-								<a class="header" id="MemorialDaybeta">Memorial Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="IndependenceDaybeta">Independence Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="LaborDaybeta">Labor Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="ColumbusDaybeta">Columbus Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="VeteransDaybeta">Veterans Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="ThanksgivingDaybeta">Thanksgiving Day</a>
-							</td>
-							<td class="header">
-								<a class="header" id="ChristmasDaybeta">Christmas Day</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader betacountdownMenu">
-							<td class="header">
-								<a class="header" id="Testbeta">Test</a>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="dropdowntableheader">
-					<table class="header" id="schoolMenu" onmouseover="show(this.id)" onmouseout="hide(this.id)">
-						<tr class="header">
-							<th class="header">
-								<a class="header" href="https://liambloom.github.io/school/index.html">School</a>
-							</th>
-						</tr>
-						<tr class="header menuOptionHeader schoolMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/school/SocialStudiesProject.html">Ancient Egyptian Social Class Project</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader schoolMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/school/ScienceVocab.html">Science Vocab</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader schoolMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/school/ELAgreekMythologyScript.html">Greek Mythology Play Script</a>
-							</td>
-						</tr>
-						<tr class="header menuOptionHeader schoolMenu">
-							<td class="header">
-								<a class="header" href="https://liambloom.github.io/school/ScratchPrometheus.html">Prometheus Cartoon</a>
-							</td>
-						</tr>
-					</table>
-				</div>
+			<!--</tr>
+		</table>-->
 	</header>
 	<script>
 /*		document.getElementById('mainMenu').onmouseover = function() {
@@ -238,13 +248,13 @@
 		function show(name) {
 			var l = document.getElementsByClassName(name)
 			for(var i=0; i<l.length; i++){
-				l[i].style.display = "inherit" //visibility = "visible"
+				l[i].style.visibility = "visible"
 			}
 		}
 		function hide(name) {
 			var l = document.getElementsByClassName(name)
 			for(var i=0; i<l.length; i++){
-				l[i].style.display = "none" //visibility = "collapse"
+				l[i].style.visibility = "collapse"
 			}
 		}
 		var n = new Date();
