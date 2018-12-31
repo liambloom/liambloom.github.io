@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <body>
-	<script src="https://liambloom.github.io/js/addNav.js"></script>
-	<script>/*document.addEventListener("DOMContentLoaded", addNav())*/
-	function check() {
-		if (document.readyState == "complete") {
-			addNav()
-			console.log("complete")
-		}else{
-			check()
-		}
-	}
-	</script>
+	<script src="https://liambloom.github.io/js/addNav.js"></script><script>document.onreadystatechange = function () {if (document.readyState == "complete") {addNav()}else{console.log("incomplete")}}</script>
 	<div>Some Text</div>
 </body>
