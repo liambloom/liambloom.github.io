@@ -37,7 +37,7 @@ function linksMaker(index, add) {
 		case "all":
 			var linkslist = []
 			for (var i = 0; i <= 10; i++) {
-				linkslist.pust(add + links(i))
+				linkslist.pust(add + linksMaker(i))
 			}
 			return linkslist
 	}
