@@ -3,7 +3,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
 	<style>
-		body, input, p{
+		body, input, p, a{
 			background-color: #000082;
 			font-family: 'VT323', monospace;
 			font-size: 20px;
@@ -12,10 +12,15 @@
 		}
 		input{
 			resize: none;
+			/*color: #000082;*/
 			width: 100%;
-			min-height: 100%;
+			/*min-height: 100%;*/
 			outline: none;
 			border: 1px solid #000082;
+			position: fixed;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
 		}
 		p{
 			margin-bottom: 0px;
@@ -23,14 +28,26 @@
 	</style>
 </head>
 <body>
-<p>
+<p id="pageText">
 > The page <!--you are looking for--><span id="urlhrefspan"></span> does not exist<br>
-> The homepage is at this link: https://liambloom.github.io/index.html<br>
-<span>> <input type="text" id="textbox" autofocus></span>
+> To go to the homepage click <a href=https://liambloom.github.io/index.html>here</a><br>
 </p>
+<input type="text" id="textbox" value="> " autofocus>
 	<script>
 		document.getElementById("urlhrefspan").innerHTML = window.location.href
-		document.getElementById("textbox")
+		var textbox = document.getElementById("textbox")
+		var pageText = document.getElementById("pageText")
+		textbox.addEventListener("keyup",  function(event){
+			if (event.keyCode == 13) {
+				pageText.innerHTML = pageText.innerHTML + textbox.value + "<br>";
+				textbox.value = "> "
+			}else{
+				
+			}
+			/*document.getElementById("pageText").innerHTML = document.getElementById("pageText").innerHTML + document.getElementById("textbox".innerHTML)
+			document.getElementById("textbox").innerHTML = ""*/
+			console.log("this ran")
+		})
 	</script>
 </body>
 <html>
