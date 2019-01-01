@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
+	<style>
+		body, input, p{
+			background-color: #000082;
+			font-family: 'VT323', monospace;
+			font-size: 20px;
+			/*font-family: 'Press Start 2P', cursive;*/
+			color: #ffffff;
+		}
+		input{
+			resize: none;
+			width: 100%;
+			min-height: 100%;
+			outline: none;
+			border: 1px solid #000082;
+		}
+		p{
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+<p>
+> The page <!--you are looking for--><span id="urlhrefspan"></span> does not exist<br>
+> The homepage is at this link: https://liambloom.github.io/index.html<br>
+<span>> <input type="text" id="textbox" autofocus></span>
+</p>
+	<script>
+		document.getElementById("urlhrefspan").innerHTML = window.location.href
+		document.getElementById("textbox")
+	</script>
+</body>
+<html>
