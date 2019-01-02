@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 	<style>
 		body, input, p, a{
 			background-color: #000082;
@@ -16,7 +16,7 @@
 			width: 100%;
 			/*min-height: 100%;*/
 			outline: none;
-			border: 1px solid #000082;
+			/*border: 1px solid #000082;*/
 			position: fixed;
 			bottom: 0px;
 			left: 0px;
@@ -29,24 +29,25 @@
 </head>
 <body>
 <p id="pageText">
-> The page <!--you are looking for--><span id="urlhrefspan"></span> does not exist<br>
-> To go to the homepage click <a href=https://liambloom.github.io/index.html>here</a><br>
+> Welcome<br>
+> I am a 404 page<br>
+> You tried to go to <span id="urlhrefspan"></span><br>
+> That page doesn't exist, so you shouldn't try to go to it<br>
+> Instead, you should try going to some pages that do exist<br>
+> They are much more interesting<br>
+> You can find links to all those in the <a href=https://liambloom.github.io/index.html>home page</a><br>
+
 </p>
-<input type="text" id="textbox" value="> " autofocus>
+<input type="text" id="textbox" value="" autofocus>
 	<script>
 		document.getElementById("urlhrefspan").innerHTML = window.location.href
 		var textbox = document.getElementById("textbox")
 		var pageText = document.getElementById("pageText")
 		textbox.addEventListener("keyup",  function(event){
 			if (event.keyCode == 13) {
-				pageText.innerHTML = pageText.innerHTML + textbox.value + "<br>";
-				textbox.value = "> "
-			}else{
-				
+				pageText.innerHTML = pageText.innerHTML + "> " + textbox.value + "<br>";
+				textbox.value = ""
 			}
-			/*document.getElementById("pageText").innerHTML = document.getElementById("pageText").innerHTML + document.getElementById("textbox".innerHTML)
-			document.getElementById("textbox").innerHTML = ""*/
-			console.log("this ran")
 		})
 	</script>
 </body>
