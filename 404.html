@@ -22,6 +22,11 @@
 </p>
 <input type="text" id="textbox" value="" autofocus>
 	<script>
+		var stateinfo = {
+			textboxDefault: "",
+			bullet: "> ",
+			state: null
+		}
 		function $(eid) {return document.getElementById(eid)} 
 		$("urlhrefspan").innerHTML = window.location.href
 		//var textbox = $("textbox")
