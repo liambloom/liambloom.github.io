@@ -3,6 +3,8 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 <link href="./404/css/BlueScreenOfDeath.css" rel="stylesheet">
+<script src="./404/js/inputHandler.js"></script>
+<script src="./404/js/TBGame.js"></script>
 	<style>
 		
 	</style>
@@ -20,13 +22,13 @@
 </p>
 <input type="text" id="textbox" value="" autofocus>
 	<script>
-		document.getElementById("urlhrefspan").innerHTML = window.location.href
-		var textbox = document.getElementById("textbox")
-		var pageText = document.getElementById("pageText")
-		textbox.addEventListener("keyup",  function(event){
+		function $(eid) {return document.getElementById(eid)} 
+		$("urlhrefspan").innerHTML = window.location.href
+		//var textbox = $("textbox")
+		//var pageText = $("pageText")
+		$("textbox").addEventListener("keyup",  function(event){
 			if (event.keyCode == 13) {
-				pageText.innerHTML = pageText.innerHTML + "> " + textbox.value + "<br>";
-				textbox.value = ""
+				inputHandler()
 			}
 		})
 	</script>
