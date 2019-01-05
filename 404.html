@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-<link href="./404/css/BlueScreenOfDeath.css" rel="stylesheet">
-<script src="./404/js/inputHandler.js"></script>
-<script src="./404/js/TBGame.js"></script>
-	<style>
-		
-	</style>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link href="./404/css/BlueScreenOfDeath.css" rel="stylesheet">
+	<script src="./404/js/inputHandler.js"></script>
+	<script src="./404/js/TBGame.js"></script>
 </head>
 <body>
 <p id="pageText">
@@ -25,12 +23,11 @@
 		var stateinfo = {
 			textboxDefault: "",
 			bullet: "> ",
-			state: null
+			state: null,
+			cheatsEnabled: false
 		}
 		function $(eid) {return document.getElementById(eid)} 
 		$("urlhrefspan").innerHTML = window.location.href
-		//var textbox = $("textbox")
-		//var pageText = $("pageText")
 		$("textbox").addEventListener("keyup",  function(event){
 			if (event.keyCode == 13) {
 				inputHandler()
