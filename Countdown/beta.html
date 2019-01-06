@@ -173,7 +173,7 @@
 					Redirect("Error: CSS variables are not supported");
 			}
 		}catch(err){
-			if(navigator.userAgent.indexOf("Safari") > -1 && !(navigator.userAgent.indexOf('Chrome') > -1)){
+			if(navigator.userAgent.includes("Safari") && !(navigator.userAgent.includes('Chrome'))){
 				window.location.assign("./safari.html")
 			}else{
 				Redirect(err)
