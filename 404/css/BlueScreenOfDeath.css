@@ -4,6 +4,11 @@ body, input, p, a {
 	font-size: 20px;
 	/*font-family: 'Press Start 2P', cursive;*/
 	color: #ffffff;
+	/*margin-bottom: ;*/
+}
+body {
+	padding-bottom: 21.2px;
+	margin: 8px;
 }
 input {
 	resize: none;
