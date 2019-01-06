@@ -24,7 +24,11 @@
 			textboxDefault: "",
 			bullet: "> ",
 			state: null,
-			cheatsEnabled: false
+			cheatsEnabled: false,
+			set stateChange(stateset) {
+				this.state = stateset
+				this.textboxDefault = "/" + stateset +":"
+			}
 		}
 		function $(eid) {return document.getElementById(eid)} 
 		$("urlhrefspan").innerHTML = window.location.href
