@@ -91,7 +91,6 @@ function slash(input){
 		}
 		catch(err){
 			output = "That cheat does not exist<br>\
-			Try \"/u.help\"<br>"// + err 
-		}
+			Try \"/u.help\""
 		return output
 }

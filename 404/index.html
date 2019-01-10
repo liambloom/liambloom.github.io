@@ -5,7 +5,7 @@
 	<!--<base target="_blank">-->
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 	<link href="./css/BlueScreenOfDeath.css" rel="stylesheet">
-	<script src="../js.lib.js"></script>
+	<script src="../js/lib.js"></script>
 	<script src="../js/strToBool.js"></script>
 	<script src="./js/inputHandler.js"></script>
 	<script src="./js/slash.js"></script>
@@ -26,16 +26,6 @@
 </p>
 <input type="text" id="textbox" value="" autofocus>
 	<script>
-		//change links based on location
-		/*document.getElementsByTagName("base")[0].href = window.location.href.split(".io/")[0] + ".io/404/"
-		var head = document.getElementsByTagName("head")[0];
-		var css = document.createElement("link");
-		css.href = "https://liambloom.github.io/404/css/BlueScreenOfDeath.css"
-		head.appendChild(css);*/
-		/*var newcss = document.createElement("link")
-		newcss.href = "css/BlueScreenOfDeath.css"
-		newcss.rel = "stylesheet"
-		document.getElementsByTagName("head")[0] += newcss*/
 
 		//information about everything
 		var stateinfo = {
@@ -49,15 +39,18 @@
 			}
 		}
 
-		//Puts url in text and runs inputHanlder() when enter key pressed
-		function $(eid) {return document.getElementById(eid)} 
+		//function $(eid) {return document.getElementById(eid)}//get rid of this
+
+		//Puts url in text
 		if (window.location.search != undefined) {
-			$("urlhrefspan").innerHTML = window.location.href.split("?")[1]
+			$.dom.id("urlhrefspan").innerHTML = window.location.href.split("?")[1]
 		}
 		else {
-			$("urlhrefspan").innerHTML = "a web page"
+			$.dom.id("urlhrefspan").innerHTML = "a web page"
 		}
-		$("textbox").addEventListener("keyup",  function(event){
+
+		//runs inputHanlder() when enter key pressed
+		$.dom.id("textbox").addEventListener("keyup",  function(event){
 			if (event.keyCode == 13) {
 				inputHandler()
 			}

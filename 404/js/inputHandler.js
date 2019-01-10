@@ -1,7 +1,7 @@
 function inputHandler() {
 	function addToPageText(whatToAdd, bullet) {
 		if (bullet == undefined) {bullet = ">"}
-		$("pageText").innerHTML += bullet + " " + whatToAdd + "<br>";
+		$.dom.id("pageText").innerHTML += bullet + " " + whatToAdd + "<br>";
 	}
 	/*function strToBool(str) {
 		if (str == "true") {
@@ -14,9 +14,9 @@ function inputHandler() {
 			return undefined
 		}
 	}*/
-	var input = $("textbox").value;
+	var input = $.dom.id("textbox").value;
 	var output;
-	
+
 	if (input.indexOf(stateinfo.textboxDefault) != 0) {
 		stateinfo.textboxDefault = ""
 	}
@@ -34,7 +34,7 @@ function inputHandler() {
 	}
 
 	//this code stays at the end
-	$("textbox").value = stateinfo.textboxDefault
+	$.dom.id("textbox").value = stateinfo.textboxDefault
 	addToPageText(input)
 	if (output != undefined){
 			output = output.replace(/<br>/g, "<br><span class='indent'>")
