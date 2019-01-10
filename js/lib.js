@@ -1,8 +1,8 @@
-//v1.0.0
+//v1.0.1
 //Created by Liam Bloom
 var $ = {
 	dom: {
-		ide: function(e) {
+		id: function(e) {
 			return document.getElementById(e);
 		},
 		class: function(e) {
@@ -21,7 +21,7 @@ var $ = {
 		},
 		add: function(e) {
 			return document.appendChild(e);
-		},
+		}, 
 		remove: function(e) {
 			return document.removeChild(e);
 		},
