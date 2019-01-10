@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!--<base target="_blank">-->
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link href="./css/BlueScreenOfDeath.css" rel="stylesheet">
+	<script src="../js.lib.js"></script>
+	<script src="../js/strToBool.js"></script>
+	<script src="./js/inputHandler.js"></script>
+	<script src="./js/slash.js"></script>
+	<script src="./js/hash.js"></script>
+	<script src="./js/TBGame.js"></script>
+
+</head>
+<body>
+<p id="pageText">
+> Welcome<br>
+> I am a 404 page<br>
+> You tried to go to <span id="urlhrefspan"></span><br>
+> That page doesn't exist, so you shouldn't try to go to it<br>
+> Instead, you should try going to some pages that do exist<br>
+> They are much more interesting<br>
+> You can find links to all those in the <a href=https://liambloom.github.io/index.html>home page</a><br>
+> !!!WARNING: THIS PAGE IS UNDER DEVELOPMENT. NOT ALL ASPECTS OF THIS PAGE WILL FUNCTION AS INTENDED!!!<br>
+</p>
+<input type="text" id="textbox" value="" autofocus>
+	<script>
+		//change links based on location
+		/*document.getElementsByTagName("base")[0].href = window.location.href.split(".io/")[0] + ".io/404/"
+		var head = document.getElementsByTagName("head")[0];
+		var css = document.createElement("link");
+		css.href = "https://liambloom.github.io/404/css/BlueScreenOfDeath.css"
+		head.appendChild(css);*/
+		/*var newcss = document.createElement("link")
+		newcss.href = "css/BlueScreenOfDeath.css"
+		newcss.rel = "stylesheet"
+		document.getElementsByTagName("head")[0] += newcss*/
+
+		//information about everything
+		var stateinfo = {
+			textboxDefault: "",
+			bullet: "> ",
+			state: null,
+			cheatsEnabled: false,
+			set stateChange(stateset) {
+				this.state = stateset
+				this.textboxDefault = "#" + stateset +":"
+			}
+		}
+
+		//Puts url in text and runs inputHanlder() when enter key pressed
+		function $(eid) {return document.getElementById(eid)} 
+		if (window.location.search != undefined) {
+			$("urlhrefspan").innerHTML = window.location.href.split("?")[1]
+		}
+		else {
+			$("urlhrefspan").innerHTML = "a web page"
+		}
+		$("textbox").addEventListener("keyup",  function(event){
+			if (event.keyCode == 13) {
+				inputHandler()
+			}
+		})
+	</script>
+</body>
+<html>
