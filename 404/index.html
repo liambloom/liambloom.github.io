@@ -51,7 +51,7 @@
 
 		//runs inputHanlder() when enter key pressed
 		$.dom.id("textbox").addEventListener("keyup",  function(event){
-			if (event.keyCode == 13) {
+			if (/*event.keyCode == 13*/$.key.check(event.keyCode, "enter")) {
 				inputHandler()
 			}
 		})
