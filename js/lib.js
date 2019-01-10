@@ -1,4 +1,5 @@
 //v1.0.0
+//Created by Liam Bloom
 var $ = {
 	dom: {
 		ide: function(e) {
