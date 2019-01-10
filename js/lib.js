@@ -1,30 +1,31 @@
+//v1.0.0
 var $ = {
 	dom: {
 		ide: function(e) {
-			return document.getElementById(e)
+			return document.getElementById(e);
 		},
 		class: function(e) {
-			return document.getElementsByClassName(e)
+			return document.getElementsByClassName(e);
 		},
 		tag: function(e) {
-			return document.getElementsByTagName(e)
+			return document.getElementsByTagName(e);
 		},
 		create: function(e) {
-			return document.createElement(e)
+			return document.createElement(e);
 		},
 		destroy: function(e) {//thanks to catalin.red for this code
 			var elem = $.dom.ide(e);
-			return elem
 			elem.parentNode.removeChild(elem);
+      return elem;
 		},
 		add: function(e) {
-			return document.appendChild(e)
+			return document.appendChild(e);
 		},
 		remove: function(e) {
-			return document.removeChild(e)
+			return document.removeChild(e);
 		},
 		replace: function(e) {
-			return document.replaceChild(e)
+			return document.replaceChild(e);
 		},
 	},
 	key: {
