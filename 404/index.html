@@ -39,8 +39,6 @@
 			}
 		}
 
-		//function $(eid) {return document.getElementById(eid)}//get rid of this
-
 		//Puts url in text
 		if (window.location.search != undefined) {
 			$.dom.id("urlhrefspan").innerHTML = window.location.href.split("?")[1]
@@ -51,7 +49,7 @@
 
 		//runs inputHanlder() when enter key pressed
 		$.dom.id("textbox").addEventListener("keyup",  function(event){
-			if (/*event.keyCode == 13*/$.key.check(event.keyCode, "enter")) {
+			if ($.key.check(event.keyCode, "enter")) {
 				inputHandler()
 			}
 		})
