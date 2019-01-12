@@ -5,11 +5,13 @@
 </head>
 <body>
 	<div id="version"></div><br>
-	<div id="test"></div><br>
+	<div id="browser"></div><br>
+	<div id="engine"></div><br>
 	<div id="userAgent"></div>
 	<script>
-		$.dom.id("version").innerHTML += $.v
-		$.dom.id("test").innerHTML = $.browser.which
+		$.dom.id("version").innerHTML = $.v
+		$.dom.id("browser").innerHTML = $.browser.which
+		$.dom.id("engine").innerHTML = $.browser.engine
 		$.dom.id("userAgent").innerHTML = window.navigator.userAgent
 	</script>
 </body>
