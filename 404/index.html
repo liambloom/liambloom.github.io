@@ -3,6 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<!--<base target="_blank">-->
+	<link rel="icon" href="../favicon/main/favicon.ico">
+	<link rel="icon" href="../favicon/main/favicon_32.png">
+	<link rel="icon" href="../favicon/main/favicon_48.png">
+	<link rel="icon" href="../favicon/main/favicon_96.png">
+	<link rel="icon" href="../favicon/main/favicon_144.png">
+	<link rel="icon" href="../favicon/main/favicon_vector.png">
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 	<link href="./css/BlueScreenOfDeath.css" rel="stylesheet">
 	<script src="../js/lib.js"></script>
@@ -35,7 +41,9 @@
 			cheatsEnabled: false,
 			set stateChange(stateset) {
 				this.state = stateset
-				this.textboxDefault = "#" + stateset +":"
+				if (stateset !== null) {
+					this.textboxDefault = "#" + stateset +":"
+				}
 			}
 		}
 
