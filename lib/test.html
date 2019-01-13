@@ -11,12 +11,12 @@
 	<link rel="icon" href="../favicon/beta/favicon_beta_vector.svg">
 </head>
 <body>
-	<div id="version"></div><br>
+	<div id="version">Lupin </div><br>
 	<div id="browser"></div><br>
 	<div id="engine"></div><br>
 	<div id="userAgent"></div>
 	<script>
-		$.dom.id("version").innerHTML = $.v
+		$.dom.id("version").innerHTML += $.v
 		$.dom.id("browser").innerHTML = $.browser.which
 		$.dom.id("engine").innerHTML = $.browser.engine
 		$.dom.id("userAgent").innerHTML = window.navigator.userAgent
