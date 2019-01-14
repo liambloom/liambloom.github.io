@@ -1,4 +1,5 @@
 //Created by Liam Bloom
+//Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
 	v: "v1.3.1 &beta;2.1.2",//version
 	dom: {
