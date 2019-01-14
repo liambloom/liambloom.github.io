@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
-	v: "v1.3.1.2.1.4",//version
+	v: "v1.3.1.2.1.5",//version
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -206,7 +206,7 @@ $.key.list[160] = /\^/i;
 $.key.list[161] = /\!/i;
 $.key.list[162] = /؛|(arabic semicolin)|(arabic semi-colin)|(arabic ;)/i;
 $.key.list[163] = /hash|hashtag|hex|octothorp|octothorpe|octatorp|octatherp|sharp|#/i;
-$.key.list[164] = /dollar|(dollar sign)|\$)/i;
+$.key.list[164] = /dollar|(dollar sign)|\$/i;
 $.key.list[165] = /ù/i;
 $.key.list[166] = /(page back)|(page backward)/i;
 $.key.list[167] = /page forward/i;
