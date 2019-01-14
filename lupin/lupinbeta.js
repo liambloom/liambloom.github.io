@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
-	v: "v1.3.1 &beta;2.1.5",//version
+	v: "v1.3.1 &beta;2.1.6",//version
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -19,7 +19,7 @@ var $ = {
 			return document.createElement(e);
 		},
 		destroy: function(e) {//thanks to catalin.red for this code
-			var elem = $.dom.ide(e);
+			var elem = $.dom.id(e);
 			elem.parentNode.removeChild(elem);
     		return elem;
 		},
@@ -225,7 +225,8 @@ $.key.list[188] = /comma/i;
 $.key.list[189] = /dash/i;
 $.key.list[190] = /period/i;
 $.key.list[191] = /forward slash|ç/i;
-$.key.list[192] = /(grave accent)|grave|ñ|æ|ö/i;
+//$.key.list[192] = /(grave accent)|grave|ñ|æ|ö/i;
+$.key.list[192] = /backquote|`/i;
 $.key.list[193] = /\?|,|\/|°/i;
 $.key.list[219] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
 $.key.list[220] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
