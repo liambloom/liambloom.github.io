@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
-	v: "v1.3.1.2.1.2",//version
+	v: "v1.3.1.2.1.4",//version
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -130,7 +130,7 @@ var $ = {
 		},
 		get lang() {
 			return window.navigator.langthis.uage.split("-");
-		}
+		},
 		get os() {
 			if (/Windows/im.test(this.ua)) {//Windows
 				return /Windows/i;
