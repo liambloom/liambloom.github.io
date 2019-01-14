@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
-	v: "v1.3.1.2.1.6",//version
+	version: "v1.3.1.2.1.3.10",
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -223,7 +223,7 @@ $.key.list[180] = /email|e-mail/i;
 $.key.list[187] = /equal sign/i;
 $.key.list[188] = /comma/i;
 $.key.list[189] = /dash/i;
-$.key.list[190] = /period/i;
+$.key.list[190] = /period|\./i;
 $.key.list[191] = /forward slash|ç/i;
 //$.key.list[192] = /(grave accent)|grave|ñ|æ|ö/i;
 $.key.list[192] = /backquote|`/i;
@@ -254,7 +254,7 @@ for (var i = 65; i <= 90; i++) {//letters
 	$.key.list[i] = new RegExp(alphabet[i - 65], "i");
 }
 for (var i = 112; i <= 135; i++) {//f
-	$.key.list[i] = new RegExp("f" + (i - 112).toString(), "i");
+	$.key.list[i] = new RegExp("f" + (i - 111).toString(), "i");
 }
 //Browser if statements
 if ($.browser.is("Firefox")){

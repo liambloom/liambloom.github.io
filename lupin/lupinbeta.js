@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
-var $ = {
-	v: "v1.3.1 &beta;2.1.6",//version
+var $beta = {
+	version: "v1.3.1 &beta;2.1.11",//version
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -19,7 +19,7 @@ var $ = {
 			return document.createElement(e);
 		},
 		destroy: function(e) {//thanks to catalin.red for this code
-			var elem = $.dom.id(e);
+			var elem = $beta.dom.id(e);
 			elem.parentNode.removeChild(elem);
     		return elem;
 		},
@@ -161,140 +161,140 @@ var $ = {
 };
 //some of these are from keycode.info thanks to Wes Bos
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-$.key.list[0] = /null|nothing/i;
-$.key.list[3] = /break/i;
-$.key.list[8] = /backspace/i;
-$.key.list[9] = /tab/i;
-$.key.list[13] = /enter/i;
-$.key.list[16] = /shift/i;
-$.key.list[17] = /ctrl|control/i;
-$.key.list[18] = /alt/i;
-$.key.list[19] = /pause|break/i;
-$.key.list[20] = /caps lock/i;
-$.key.list[21] = /hangul/i;//Korean
-$.key.list[25] = /hanga/i;//Chinese Characters in Korean
-$.key.list[27] = /escape|esc/i;
-$.key.list[28] = /conversion/i;
-$.key.list[29] = /non-conversion/i;
-$.key.list[32] = /space| /i;
-$.key.list[33] = /page up/i;
-$.key.list[34] = /page down/i;
-$.key.list[35] = /end/i;
-$.key.list[36] = /home/i;
-$.key.list[37] = /left arrow/i;
-$.key.list[38] = /up arrow/i;
-$.key.list[39] = /right arrow/i;
-$.key.list[40] = /down arrow/i;
-$.key.list[41] = /select/i;
-$.key.list[42] = /print|ctrl\+p/i;
-$.key.list[43] = /execute/i;
-$.key.list[44] = /PrtSc|(Print Screen)/i;
-$.key.list[45] = /insert/i;
-$.key.list[46] = /delete/i;
-$.key.list[47] = /help/i;
-$.key.list[58] = /colin|:/i;
-$.key.list[60] = /(less than)|</i;
-$.key.list[63] = /eszett|ß/i;
-$.key.list[95] = /sleep/i;
-$.key.list[106] = /multiply|\*/i;
-$.key.list[107] = /add|\+/i;
-$.key.list[110] = /(decimal point)|\./i;
-$.key.list[111] = /divide|\//i;
-$.key.list[144] = /num lock/i;
-$.key.list[145] = /scroll lock/i;
-$.key.list[160] = /\^/i;
-$.key.list[161] = /\!/i;
-$.key.list[162] = /؛|(arabic semicolin)|(arabic semi-colin)|(arabic ;)/i;
-$.key.list[163] = /hash|hashtag|hex|octothorp|octothorpe|octatorp|octatherp|sharp|#/i;
-$.key.list[164] = /dollar|(dollar sign)|\$/i;
-$.key.list[165] = /ù/i;
-$.key.list[166] = /(page back)|(page backward)/i;
-$.key.list[167] = /page forward/i;
-$.key.list[168] = /refresh|reload/i;
-$.key.list[169] = /(closing paren)|AZERTY/i;
-$.key.list[170] = /star|asterisk|\*/i;
-$.key.list[171] = /~|\+|\*/i;
-$.key.list[172] = /home/i;
-$.key.list[176] = /next/i;
-$.key.list[177] = /previous/i;
-$.key.list[178] = /stop/i;
-$.key.list[179] = /play|pause/i;
-$.key.list[180] = /email|e-mail/i;
-$.key.list[187] = /equal sign/i;
-$.key.list[188] = /comma/i;
-$.key.list[189] = /dash/i;
-$.key.list[190] = /period/i;
-$.key.list[191] = /forward slash|ç/i;
-//$.key.list[192] = /(grave accent)|grave|ñ|æ|ö/i;
-$.key.list[192] = /backquote|`/i;
-$.key.list[193] = /\?|,|\/|°/i;
-$.key.list[219] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
-$.key.list[220] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
-$.key.list[221] = /(close bracket)|\]|å/i;
-$.key.list[222] = /(single quote)|'|ø|ä/i;
-$.key.list[223] = /`/i;
-$.key.list[225] = /altgr/i;
-$.key.list[226] = /(< \/git>)|(left (backslash|back slash|\\))/
-$.key.list[230] = /GNOME Compose Key/i;
-$.key.list[231] = /ç/i;
-$.key.list[233] = /XF86Forward/i;
-$.key.list[234] = /XF86Back/i;
-$.key.list[235] = /non-conversion/i;
-$.key.list[240] = /alphanumeric/i;
-$.key.list[242] = /hiragana|katakana/i;
-$.key.list[243] = /half-width|full-width/i;
-$.key.list[244] = /kanji/i;
-$.key.list[255] = /toggle touchpad/i;
+$beta.key.list[0] = /null|nothing/i;
+$beta.key.list[3] = /break/i;
+$beta.key.list[8] = /backspace/i;
+$beta.key.list[9] = /tab/i;
+$beta.key.list[13] = /enter/i;
+$beta.key.list[16] = /shift/i;
+$beta.key.list[17] = /ctrl|control/i;
+$beta.key.list[18] = /alt/i;
+$beta.key.list[19] = /pause|break/i;
+$beta.key.list[20] = /caps lock/i;
+$beta.key.list[21] = /hangul/i;//Korean
+$beta.key.list[25] = /hanga/i;//Chinese Characters in Korean
+$beta.key.list[27] = /escape|esc/i;
+$beta.key.list[28] = /conversion/i;
+$beta.key.list[29] = /non-conversion/i;
+$beta.key.list[32] = /space| /i;
+$beta.key.list[33] = /page up/i;
+$beta.key.list[34] = /page down/i;
+$beta.key.list[35] = /end/i;
+$beta.key.list[36] = /home/i;
+$beta.key.list[37] = /left arrow/i;
+$beta.key.list[38] = /up arrow/i;
+$beta.key.list[39] = /right arrow/i;
+$beta.key.list[40] = /down arrow/i;
+$beta.key.list[41] = /select/i;
+$beta.key.list[42] = /print|ctrl\+p/i;
+$beta.key.list[43] = /execute/i;
+$beta.key.list[44] = /PrtSc|(Print Screen)/i;
+$beta.key.list[45] = /insert/i;
+$beta.key.list[46] = /delete/i;
+$beta.key.list[47] = /help/i;
+$beta.key.list[58] = /colin|:/i;
+$beta.key.list[60] = /(less than)|</i;
+$beta.key.list[63] = /eszett|ß/i;
+$beta.key.list[95] = /sleep/i;
+$beta.key.list[106] = /multiply|\*/i;
+$beta.key.list[107] = /add|\+/i;
+$beta.key.list[110] = /(decimal point)|\./i;
+$beta.key.list[111] = /divide|\//i;
+$beta.key.list[144] = /num lock/i;
+$beta.key.list[145] = /scroll lock/i;
+$beta.key.list[160] = /\^/i;
+$beta.key.list[161] = /\!/i;
+$beta.key.list[162] = /؛|(arabic semicolin)|(arabic semi-colin)|(arabic ;)/i;
+$beta.key.list[163] = /hash|hashtag|hex|octothorp|octothorpe|octatorp|octatherp|sharp|#/i;
+$beta.key.list[164] = /dollar|(dollar sign)|\$beta/i;
+$beta.key.list[165] = /ù/i;
+$beta.key.list[166] = /(page back)|(page backward)/i;
+$beta.key.list[167] = /page forward/i;
+$beta.key.list[168] = /refresh|reload/i;
+$beta.key.list[169] = /(closing paren)|AZERTY/i;
+$beta.key.list[170] = /star|asterisk|\*/i;
+$beta.key.list[171] = /~|\+|\*/i;
+$beta.key.list[172] = /home/i;
+$beta.key.list[176] = /next/i;
+$beta.key.list[177] = /previous/i;
+$beta.key.list[178] = /stop/i;
+$beta.key.list[179] = /play|pause/i;
+$beta.key.list[180] = /email|e-mail/i;
+$beta.key.list[187] = /equal sign/i;
+$beta.key.list[188] = /comma/i;
+$beta.key.list[189] = /dash/i;
+$beta.key.list[190] = /period|\./i;
+$beta.key.list[191] = /forward slash|ç/i;
+//$beta.key.list[192] = /(grave accent)|grave|ñ|æ|ö/i;
+$beta.key.list[192] = /backquote|`/i;
+$beta.key.list[193] = /\?|,|\/|°/i;
+$beta.key.list[219] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
+$beta.key.list[220] = /(backslash)|(back slash)|\\|(open bracket)|\[/i;//Why are these the same?
+$beta.key.list[221] = /(close bracket)|\]|å/i;
+$beta.key.list[222] = /(single quote)|'|ø|ä/i;
+$beta.key.list[223] = /`/i;
+$beta.key.list[225] = /altgr/i;
+$beta.key.list[226] = /(< \/git>)|(left (backslash|back slash|\\))/
+$beta.key.list[230] = /GNOME Compose Key/i;
+$beta.key.list[231] = /ç/i;
+$beta.key.list[233] = /XF86Forward/i;
+$beta.key.list[234] = /XF86Back/i;
+$beta.key.list[235] = /non-conversion/i;
+$beta.key.list[240] = /alphanumeric/i;
+$beta.key.list[242] = /hiragana|katakana/i;
+$beta.key.list[243] = /half-width|full-width/i;
+$beta.key.list[244] = /kanji/i;
+$beta.key.list[255] = /toggle touchpad/i;
 //For Loops
 for (var i = 48; i <= 57; i++) {//numbers
-	$.key.list[i] = new RegExp((i - 48).toString(), "i");//Regular
-	$.key.list[i+48] = new RegExp("numpad " + (i - 48).toString(), "i");//Numpad
+	$beta.key.list[i] = new RegExp((i - 48).toString(), "i");//Regular
+	$beta.key.list[i+48] = new RegExp("numpad " + (i - 48).toString(), "i");//Numpad
 }
 for (var i = 65; i <= 90; i++) {//letters
-	$.key.list[i] = new RegExp(alphabet[i - 65], "i");
+	$beta.key.list[i] = new RegExp(alphabet[i - 65], "i");
 }
 for (var i = 112; i <= 135; i++) {//f
-	$.key.list[i] = new RegExp("f" + (i - 112).toString(), "i");
+	$beta.key.list[i] = new RegExp("f" + (i - 111).toString(), "i");
 }
 //Browser if statements
-if ($.browser.is("Firefox")){
-	$.key.list[59] = /semicolin|semi-colin|;/i;
-	$.key.list[61] = /equals|equal|=/i;
-	$.key.list[64] = /at|@/i;
-	$.key.list[108] = /numpad (period|\.)/
-	$.key.list[173] = /subract|minus|-/i;
-	$.key.list[181] = /mute|unmute/i;
-	$.key.list[182] = /(decrease volume)|(volume down)/i;
-	$.key.list[183] = /(increase volume)|(volume up)/i;
+if ($beta.browser.is("Firefox")){
+	$beta.key.list[59] = /semicolin|semi-colin|;/i;
+	$beta.key.list[61] = /equals|equal|=/i;
+	$beta.key.list[64] = /at|@/i;
+	$beta.key.list[108] = /numpad (period|\.)/
+	$beta.key.list[173] = /subract|minus|-/i;
+	$beta.key.list[181] = /mute|unmute/i;
+	$beta.key.list[182] = /(decrease volume)|(volume down)/i;
+	$beta.key.list[183] = /(increase volume)|(volume up)/i;
 }
 else {
-	$.key.list[59] = /equals|equal|=/i;
-	$.key.list[109] = /subtract|minus|-/i;
-	$.key.list[173] = /mute|unmute/i;
-	$.key.list[174] = /(decrease volume)|(volume down)/i;
-	$.key.list[175] = /(increase volume)|(volume up)/i;
-	$.key.list[186] = /semi-colin|semicolin|;|ñ/i;
-	if ($.browser.is("Chrome")) {
-		$.key.list[194] = /numpad (period|\.)/i;
+	$beta.key.list[59] = /equals|equal|=/i;
+	$beta.key.list[109] = /subtract|minus|-/i;
+	$beta.key.list[173] = /mute|unmute/i;
+	$beta.key.list[174] = /(decrease volume)|(volume down)/i;
+	$beta.key.list[175] = /(increase volume)|(volume up)/i;
+	$beta.key.list[186] = /semi-colin|semicolin|;|ñ/i;
+	if ($beta.browser.is("Chrome")) {
+		$beta.key.list[194] = /numpad (period|\.)/i;
 	}
 }
-if ($.browser.is("Chrome") || $.browser.is("Edge")) {
-	$.key.list[251] = /unlock trackpad/i;
+if ($beta.browser.is("Chrome") || $beta.browser.is("Edge")) {
+	$beta.key.list[251] = /unlock trackpad/i;
 }
 //OS if statements
-if ($.browser.is("Windows")) {
-	$.key.list[91] = /left (window|(window key)|(windows key))/i;
-	$.key.list[92] = /right (window|(window key)|(windows key))/i;
-	$.key.list[93] = /select|menu/i;
+if ($beta.browser.is("Windows")) {
+	$beta.key.list[91] = /left (window|(window key)|(windows key))/i;
+	$beta.key.list[92] = /right (window|(window key)|(windows key))/i;
+	$beta.key.list[93] = /select|menu/i;
 }
-else if ($.browser.is("MacOS")) {
-	$.key.list[91] = /left (⌘|cmnd|command|(cmnd key)|(command key))/i;
-	$.key.list[93] = /select|right (⌘|cmnd|command|(cmnd key)|(command key))/i;
+else if ($beta.browser.is("MacOS")) {
+	$beta.key.list[91] = /left (⌘|cmnd|command|(cmnd key)|(command key))/i;
+	$beta.key.list[93] = /select|right (⌘|cmnd|command|(cmnd key)|(command key))/i;
 }
-else if ($.browser.is("ChromeOS")) {
-	$.key.list[91] = /search/i;
+else if ($beta.browser.is("ChromeOS")) {
+	$beta.key.list[91] = /search/i;
 }
 //Other
-if ($.browser.is("Firefox") && $.browser.is("MacOS")) {
-	$.key.list[224] = /⌘|cmnd|command|(cmnd key)|(command key)/i;
+if ($beta.browser.is("Firefox") && $beta.browser.is("MacOS")) {
+	$beta.key.list[224] = /⌘|cmnd|command|(cmnd key)|(command key)/i;
 }
