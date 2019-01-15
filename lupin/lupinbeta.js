@@ -1,7 +1,8 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $beta = {
-	version: "v1.3.1 &beta;2.1.11",//version
+	version: "&beta;1.4.1.0.0.0",//version
+	alphabet: "abcdefghijklmnopqrstuvwxyz".split(""),
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
@@ -24,12 +25,14 @@ var $beta = {
     		return elem;
 		},
 		add: function(e) {
-			return document.appendChild(e);
+			//return document.appendChild(e);
+			$beta.dom.id(e).parentNode.removeChild($.dom.id(e))
+			return $beta.dom.id(e)
 		}, 
-		remove: function(e) {
+		/*remove: function(e) {
 			return document.removeChild(e);
-		},
-		replace: function(e) {
+		},*/
+		replace: function(e) {//um...
 			return document.replaceChild(e);
 		},
 	},
@@ -157,10 +160,29 @@ var $beta = {
 				return /Other/i;
 			}
 		}
+	},
+	random: {
+		number: function(min, max) {
+			return min + Math.round(Math.random() * (max - min))
+		},
+		get color() {
+			var col = "#"
+			for (var i = 0; i < 6; i++) {
+				col += this.number(0x0, 0xf).toString(16)
+			}
+			return col
+		},
+		get letter() {
+			return $beta.alphabet[this.number(0, 25)]
+		}
+	},
+	date: {
+
 	}
+
 };
 //some of these are from keycode.info thanks to Wes Bos
-var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+//var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 $beta.key.list[0] = /null|nothing/i;
 $beta.key.list[3] = /break/i;
 $beta.key.list[8] = /backspace/i;
@@ -251,7 +273,7 @@ for (var i = 48; i <= 57; i++) {//numbers
 	$beta.key.list[i+48] = new RegExp("numpad " + (i - 48).toString(), "i");//Numpad
 }
 for (var i = 65; i <= 90; i++) {//letters
-	$beta.key.list[i] = new RegExp(alphabet[i - 65], "i");
+	$beta.key.list[i] = new RegExp($beta.alphabet[i - 65], "i");
 }
 for (var i = 112; i <= 135; i++) {//f
 	$beta.key.list[i] = new RegExp("f" + (i - 111).toString(), "i");
