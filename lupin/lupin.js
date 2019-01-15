@@ -1,7 +1,7 @@
 //Created by Liam Bloom
 //Embed with <script src="https://liambloom.github.io/lupin/lupin.js"></script>
 var $ = {
-	version: "v1.3.1.2.1.3.10",
+	version: "v1.3.1.2.0.3.11",
 	dom: {
 		id: function(e) {
 			return document.getElementById(e);
