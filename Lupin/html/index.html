@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Lupin.js Guide</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="../../favicon/main/favicon.ico">
+	<link rel="icon" href="../../favicon/main/favicon_32.png">
+	<link rel="icon" href="../../favicon/main/favicon_48.png">
+	<link rel="icon" href="../../favicon/main/favicon_96.png">
+	<link rel="icon" href="../../favicon/main/favicon_144.png">
+	<link rel="icon" href="../../favicon/main/favicon_vector.svg">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../Lupin.js"></script>
+	<script src="../LupinBeta.js"></script>
+</head>
+<body>
+	<header><h2><ul>
+		<li class="space"><a href="../Lupin.js"><img src="../../favicon/main/favicon_vector.svg">Lupin.js</a><p id="version"></p></li>
+		<li><a href="../LupinBeta.js"><img src="../../favicon/beta/favicon_beta_vector.svg">LupinBeta.js</a><p id="bversion"></p></li>
+	</ul></h2></header>
+
+	<script>
+		$.dom.id("version").innerHTML = $.version
+		$.dom.id("bversion").innerHTML = $beta.version
+	</script>
+</body>
+</html>
