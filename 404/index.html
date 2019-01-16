@@ -49,15 +49,15 @@
 
 		//Puts url in text
 		if (window.location.search != undefined) {
-			$.dom.id("urlhrefspan").innerHTML = window.location.href.split("?")[1]
+			lupin.dom.id("urlhrefspan").innerHTML = window.location.href.split("?")[1]
 		}
 		else {
-			$.dom.id("urlhrefspan").innerHTML = "a web page"
+			lupin.dom.id("urlhrefspan").innerHTML = "a web page"
 		}
 
 		//runs inputHanlder() when enter key pressed
-		$.dom.id("textbox").addEventListener("keyup",  function(event){
-			if ($.key.check(event.keyCode, "enter")) {
+		lupin.dom.id("textbox").addEventListener("keyup",  function(event){
+			if (lupin.key.check(event.keyCode, "enter")) {
 				inputHandler()
 			}
 		})
