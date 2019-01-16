@@ -68,10 +68,10 @@
 	<h1 id="msg">Press any key</h1>
 	<div id="code" style="text-align: center;"></div>
 	<script>
-		$.dom.id("version").innerHTML = $.version
+		lupin.dom.id("version").innerHTML = lupin.version
 		document.addEventListener("keyup", function(event) {
-			$.dom.id("code").innerHTML = "<table align='center'><tr><td><h2>" + event.keyCode + "</h2></td><td><h2>" + $.key.code($.key.list[event.keyCode]) +"</h2></td><td><h2>" + event.key + "</h2></td><td><h2>" + $.key.list[event.keyCode].toString().split("/")[1] + "</h2></td><td><h2>" + event.code + "</h2></td></tr><tr><td><p>event.keyCode</p></td><td><p>keycode</p></td><td><p>event.key</p></td><td><p>key</p></td><td><p>event.code</p></td></tr></table>"
-			$.dom.destroy("msg")//Breaks code after first time, must go at end
+			lupin.dom.id("code").innerHTML = "<table align='center'><tr><td><h2>" + event.keyCode + "</h2></td><td><h2>" + lupin.key.code(lupin.key.list[event.keyCode]) +"</h2></td><td><h2>" + event.key + "</h2></td><td><h2>" + lupin.key.list[event.keyCode].toString().split("/")[1] + "</h2></td><td><h2>" + event.code + "</h2></td></tr><tr><td><p>event.keyCode</p></td><td><p>keycode</p></td><td><p>event.key</p></td><td><p>key</p></td><td><p>event.code</p></td></tr></table>"
+			lupin.dom.destroy("msg")//Breaks code after first time, must go at end
 		})
 	</script>
 </body>
