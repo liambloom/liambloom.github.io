@@ -15,11 +15,13 @@
 </head>
 <body>
 	<header><h2><ul>
-		<li class="space"><a href="../Lupin.js"><img src="../../favicon/main/favicon_vector.svg">Lupin.js</a><p id="version"></p></li>
-		<li><a href="../LupinBeta.js"><img src="../../favicon/beta/favicon_beta_vector.svg">LupinBeta.js</a><p id="bversion"></p></li>
+		<li class="space"><a href="../Lupin.js"><img id="logo">Lupin.js</a><p id="version"></p></li>
+		<li><a href="../LupinBeta.js"><img id="blogo">LupinBeta.js</a><p id="bversion"></p></li>
 	</ul></h2></header>
 
 	<script>
+		lupin.dom.id("logo").src = lupin.logo
+		lupin.dom.id("blogo").src = lupinb.logo
 		lupin.dom.id("version").innerHTML = lupin.version
 		lupin.dom.id("bversion").innerHTML = lupinb.version
 	</script>
