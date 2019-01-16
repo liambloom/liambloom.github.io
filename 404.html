@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <script>
-window.onload function() {
+window.onload = function() {
 	if (window.location.hash.includes("no404")) {
-		window.location.assign("https://liambloom.github.io/404/index.html?" + window.location.href)
+		document.write("The page " + window.location.href + " does not exist.")
 	}
 	else {
-		document.write("The page " + window.location.href + " does not exist.")
+		window.location.assign("https://liambloom.github.io/404/index.html?" + window.location.href)
 	}
 }
 </script>
