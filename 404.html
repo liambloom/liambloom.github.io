@@ -6,6 +6,9 @@
 	if (!/no404/i.test(window.location.hash)) {
 		window.location.assign("https://liambloom.github.io/404/index.html?" + window.location.href)
 	}
+	else {
+		document.write("The page" + window.location.href + "does not exist.")
+	}
 </script>
 </head>
 <body>
