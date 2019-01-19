@@ -5,11 +5,11 @@ var player = {
 		y: 0,
 		z: 0,
 		get full() {
-			return "_" + this.x + "_" + this.y + "_" + this.z
+			return "_" + this.x + "_" + this.y + "_" + this.z //var fullcords = [this.x, this.y, this.z].join("_")
 		}
 	},
 	inventory: {}
 }
 var locations = {
-	_0_0_0: "Hello<br>> I am liam"
+	_0_0_0: ""
 }
