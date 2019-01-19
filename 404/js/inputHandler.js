@@ -3,17 +3,6 @@ function inputHandler() {
 		if (bullet == undefined) {bullet = ">"}
 		$.dom.id("pageText").innerHTML += bullet + " " + whatToAdd + "<br>";
 	}
-	/*function strToBool(str) {
-		if (str == "true") {
-			return true
-		}
-		else if (str == "false") {
-			return false
-		}
-		else {
-			return undefined
-		}
-	}*/
 	var input = $.dom.id("textbox").value;
 	var output;
 
