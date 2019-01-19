@@ -19,8 +19,8 @@ function slash(input){
 					}
 				},
 				help: function initiateHelp() {
-					stateinfo.stateChange = "help"
-					output = "What would you like help with: cheats or games?"
+					stateinfo.stateChange = "help:commands"
+					hash("#help:commands")
 				},
 				enable_cheats: function chEn() {
 					//console.log(this)
@@ -38,9 +38,10 @@ function slash(input){
 				stateinfo.state
 			}	
 		}
-		for (var cheatHandler = input.toLowerCase(); cheatHandler.includes(" ");) {
+		/*for (var cheatHandler = input.toLowerCase(); cheatHandler.includes(" ");) {
 			cheatHandler = cheatHandler.replace(" ", "")
-		}
+		}*/
+		var cheatHandler = input.toLowerCase().replace(/ /g, "")
 		try{
 			if (cheatHandler.includes("=")){
 				cheatHandler = cheatHandler.split("=")
@@ -92,5 +93,6 @@ function slash(input){
 		catch(err){
 			output = "That cheat does not exist<br>\
 			Try \"/u.help\""
+		}
 		return output
 }
