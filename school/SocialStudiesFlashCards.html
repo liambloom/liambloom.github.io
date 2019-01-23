@@ -16,8 +16,7 @@
 	<dl>
 	<dt class="quiz" id="word"></dt><br>
 	<dd class="quiz" id="deffinition"></dd>
-	<input id="reveal" type="button" value="Reveal Answer"><br>
-	<input id="reload" type="button" value="Reload">
+	<input id="button" type="button" value="Reveal Answer">
 	</dl>
 	<script>
 		var show;
@@ -79,11 +78,26 @@
 					document.getElementById("deffinition").innerHTML = flashcards[Object.keys(flashcards)[num]];
 					if (typeof bool !== "boolean") {bool = true;}
 					if (bool) {
-						document.getElementById("reveal").onclick = function(){flashcards.word(false, num);}
+						document.getElementById("button").onclick = function(){flashcards.word(false, num);}
 					}
 					else {
-						show = true;
+						document.getElementById("button").onclick = function(){
+							var quiz = document.getElementsByClassName("quiz");
+							//flashcards.num.reset()
+							for (var i = 0; i < quiz.length; i++) {
+								quiz[i].innerHTML = "";
+							}
+							if (Math.random() < 0.5) {
+								flashcards.word();
+							}
+							else {
+								flashcards.deffinition();
+						}
+						}
 					}
+					/*else {
+						show = true;
+					}*/
 				}
 			}
 		})
@@ -103,20 +117,20 @@
 		}
 		document.addEventListener("keyup", function(event){
 			//console.log("this ran")
-			if (event.keyCode == 13) {
+			/*if (event.keyCode == 13) {
 				if (show) {
 					document.getElementById("reload").onclick();
 				}
 				else {
 					document.getElementById("reveal").onclick();
 				}
-			}
-			/*if (event.keyCode == 13) {//Enter
-				document.getElementById("reload").onclick();
+			}*/
+			if (event.keyCode == 13) {//Enter
+				document.getElementById("button").onclick();
 
-			}
+			}/*
 			else if (event.keyCode == 16) {//Shift
-				document.getElementById("reveal").onclick();
+				document.getElementById("button").onclick();
 			}*/
 		})
 	</script>
