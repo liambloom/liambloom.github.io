@@ -136,7 +136,12 @@
 				document.getElementById("ThanksgivingDay").href = linksMaker(8, "")
 				document.getElementById("ChristmasDay").href = linksMaker(9, "")
 				document.getElementById("Test").href = linksMaker(10, "")
-
+				if (window.location.hash) {
+					try {
+						window.location.assign(document.getElementById(window.location.hash.replace("#", "")).href)
+					}
+					catch(err) {}
+				}
 				//linksMaker(", ""all")
 				window.addEventListener('load', function() {
 					if(document.getElementById("NewYearsDay").href == ""){
