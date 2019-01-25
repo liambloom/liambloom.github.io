@@ -109,7 +109,7 @@
 	</div>
 	<script>
 		try{
-			var urlinfo = new URLSearchParams(window.location.search);
+			var urlinfo = new URLSearchParams(window.location.search);//Can I remove new URLSearchParams() and just leave the window.location.search
 			var info = ["0-1-1970", "00:00", 0, 0, "Something Happens", "Something Happened", "fireworks", undefined];
 			var entries = urlinfo.entries();
 			try{
@@ -149,14 +149,14 @@
 					}
 				}, false);
 			}else{
-				destroy("menu")
+				destroy("menu");
 				setInterval(function() {
 					countdownHandler(info[0], info[1], info[2], info[3], info[4], info[5], 'url("./img/' + info[6] + '.gif")');
 				}, 1);
 				document.body.style.backgroundImage = "url(\"./img/" + info[7] + ".gif\")";
 				window.addEventListener('load', function() {Readable();}, false);
 				if(info[7] != undefined && info[7] != ""){
-					destroy("hourglassMenu")
+					destroy("hourglassMenu");
 				}
 			}
 				try{
@@ -168,7 +168,7 @@
 						}else{
 							window.location.assign("?" + urlinfo + "&7=" + document.getElementById("hourglassselect").value);
 						}
-					destroy('hourglassMenu')
+					destroy('hourglassMenu');
 					}
 				}catch(err){
 					
