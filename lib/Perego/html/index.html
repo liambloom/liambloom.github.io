@@ -34,58 +34,58 @@
 		]//Add beta and alpha to initial css and make them an input for Option
 		//Also add something to balance out the fact that the words are lower
 		home = new Option("Home<span class='beta'></span><span class='sub'></span>");
+		home.innerMenu = new Menu([
+			["Magic Eight Ball", "/MagicEight.html"], 
+			["Random Color", "/RandomColor.html"], 
+			["Gradient Color", "/GradientColor.html"]
+		]);
 		countdown = new Option("Countdown<span class='beta'></span><span class='sub'></span>", "/Countdown/index.html");
 		cb = new Option("Countdown<span class='beta'>beta</span><span class='sub'></span>", "/Countdown/beta.html");
 		school = new Option("School<span class='beta'></span><span class='sub'></span>", "/school/index.html");
 		main.option = [home, countdown, cb, school];
-		hm = new Menu();//Must add way to create menu options while declaring menu
 		cm = new Menu();
 		cbm = new Menu();
 		sm = new Menu();
-		home.innerMenu = hm;
+		//home.innerMenu = hm;
 		countdown.innerMenu = cm;
 		cb.innerMenu = cbm;
 		school.innerMenu = sm;
-		hm.option = [
-			new Option("Magic Eight Ball", "/MagicEight.html"),
-			new Option("Random Color", "/RandomColor.html"),
-			new Option("Gradient Color", "/GradientColor.html")
-		];
 		cm.option = [
-			new Option("New Years Day<span class='alpha'>alpha</span>", "/Countdown/index.html#NewYearsDay"),//Make innerMenu automatically fill in beginning of href to be folders of the option they are dropping down from
-			new Option("Martin Luther King Jr. Day<span class='alpha'>alpha</span>", "/Countdown/index.html#MartinLutherKingJrDay"),
-			new Option("George Washington's Birthday<span class='alpha'>alpha</span>", "/Countdown/index.html#GeorgeWashingtonsBirthday"),
-			new Option("Memorial Day<span class='alpha'>alpha</span>", "/Countdown/index.html#MemorialDay"),
-			new Option("Independence Day<span class='alpha'>alpha</span>", "/Countdown/index.html#IndependenceDay"),
-			new Option("Labor Day<span class='alpha'>alpha</span>", "/Countdown/index.html#LaborDay"),
-			new Option("Columbus Day<span class='alpha'>alpha</span>", "/Countdown/index.html#ColumbusDay"),
-			new Option("Veterans Day<span class='alpha'>alpha</span>", "/Countdown/index.html#VeteransDay"),
-			new Option("Thanksgiving Day<span class='alpha'>alpha</span>", "/Countdown/index.html#ThanksgivingDay"),
-			new Option("Christmas Day<span class='alpha'>alpha</span>", "/Countdown/index.html#ChristmasDay"),
-			new Option("Test<span class='alpha'>alpha</span>", "/Countdown/index.html#Test")
+			new Option("New Years Day<span class='alpha'>alpha</span>", "/index.html#NewYearsDay"),
+			new Option("Martin Luther King Jr. Day<span class='alpha'>alpha</span>", "/index.html#MartinLutherKingJrDay"),
+			new Option("George Washington's Birthday<span class='alpha'>alpha</span>", "/index.html#GeorgeWashingtonsBirthday"),
+			new Option("Memorial Day<span class='alpha'>alpha</span>", "/index.html#MemorialDay"),
+			new Option("Independence Day<span class='alpha'>alpha</span>", "/index.html#IndependenceDay"),
+			new Option("Labor Day<span class='alpha'>alpha</span>", "/index.html#LaborDay"),
+			new Option("Columbus Day<span class='alpha'>alpha</span>", "/index.html#ColumbusDay"),
+			new Option("Veterans Day<span class='alpha'>alpha</span>", "/index.html#VeteransDay"),
+			new Option("Thanksgiving Day<span class='alpha'>alpha</span>", "/index.html#ThanksgivingDay"),
+			new Option("Christmas Day<span class='alpha'>alpha</span>", "/index.html#ChristmasDay"),
+			new Option("Test<span class='alpha'>alpha</span>", "/index.html#Test")
 		];
 		cbm.option = [
-			new Option("New Years Day<span class='beta'>beta</span>", "/Countdown/beta.html#NewYearsDay"),
-			new Option("Martin Luther King Jr. Day<span class='beta'>beta</span>", "/Countdown/beta.html#MartinLutherKingJrDay"),
-			new Option("George Washington's Birthday<span class='beta'>beta</span>", "/Countdown/beta.html#GeorgeWashingtonsBirthday"),
-			new Option("Memorial Day<span class='beta'>beta</span>", "/Countdown/beta.html#MemorialDay"),
-			new Option("Independence Day<span class='beta'>beta</span>", "/Countdown/beta.html#IndependenceDay"),
-			new Option("Labor Day<span class='beta'>beta</span>", "/Countdown/beta.html#LaborDay"),
-			new Option("Columbus Day<span class='beta'>beta</span>", "/Countdown/beta.html#ColumbusDay"),
-			new Option("Veterans Day<span class='beta'>beta</span>", "/Countdown/beta.html#VeteransDay"),
-			new Option("Thanksgiving Day<span class='beta'>beta</span>", "/Countdown/beta.html#ThanksgivingDay"),
-			new Option("Christmas Day<span class='beta'>v</span>", "/Countdown/beta.html#ChristmasDay"),
-			new Option("Test<span class='beta'>beta</span>", "/Countdown/beta.html#Test")
+			new Option("New Years Day<span class='beta'>beta</span>", "/beta.html#NewYearsDay"),
+			new Option("Martin Luther King Jr. Day<span class='beta'>beta</span>", "/beta.html#MartinLutherKingJrDay"),
+			new Option("George Washington's Birthday<span class='beta'>beta</span>", "/beta.html#GeorgeWashingtonsBirthday"),
+			new Option("Memorial Day<span class='beta'>beta</span>", "/beta.html#MemorialDay"),
+			new Option("Independence Day<span class='beta'>beta</span>", "/beta.html#IndependenceDay"),
+			new Option("Labor Day<span class='beta'>beta</span>", "/beta.html#LaborDay"),
+			new Option("Columbus Day<span class='beta'>beta</span>", "/beta.html#ColumbusDay"),
+			new Option("Veterans Day<span class='beta'>beta</span>", "/beta.html#VeteransDay"),
+			new Option("Thanksgiving Day<span class='beta'>beta</span>", "/beta.html#ThanksgivingDay"),
+			new Option("Christmas Day<span class='beta'>beta</span>", "/beta.html#ChristmasDay"),
+			new Option("Test<span class='beta'>beta</span>", "/beta.html#Test")
 		];
 		sm.option = [
-			new Option("Ancient Egyptian Social Class Project", "/school/SocialStudiesProject.html"),
-			new Option("Science Vocab", "/school/ScienceVocab.html"),
-			new Option("Greek Mythology Play Script", "/school/ELAgreekMythologyScript.html"),
+			new Option("Ancient Egyptian Social Class Project", "/SocialStudiesProject.html"),
+			new Option("Science Vocab", "/ScienceVocab.html"),
+			new Option("Greek Mythology Play Script", "/ELAgreekMythologyScript.html"),
 			new Option("Prometheus Cartoon", "https://scratch.mit.edu/projects/221553121/"),
-			new Option("Social Studies Flash Cards<span class='beta'>beta</span>", "/school/SocialStudiesFlashCards.html")
+			new Option("Social Studies Flash Cards<span class='beta'>beta</span>", "/SocialStudiesFlashCards.html")
 		];
 		main.hide = new Option("Hide Menu<span class='beta'></span><span class='sub'></span>", "", "right");
 		main.end
+		console.clear()
 	</script>
 </body>
 </html>
