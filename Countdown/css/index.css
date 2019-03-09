@@ -33,7 +33,7 @@ p {
 .bottom{
 	position: fixed;
 	position: -webkit-fixed;
-	bottom: 0px;\
+	bottom: 0px;
 	left: 0px;
 	right: 0px;
 	width: 100%;
@@ -71,6 +71,7 @@ a:visited {
 .number{
 	font-size: 100px;
 	font-weight: bold;
+	font-variant-numeric: tabular-nums;
 }
 .label{
 	font-size: 50px;
