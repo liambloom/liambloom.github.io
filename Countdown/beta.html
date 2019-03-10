@@ -10,6 +10,7 @@
 	<link rel="icon" href="../favicon/beta/favicon_beta_144.png">
 	<link rel="icon" href="../favicon/beta/favicon_beta_vector.svg">
 	<link rel="stylesheet" href="./css/index.css">
+	<script src="js/index.js"></script>
 	<script src="./js/findDay.js"></script>
 	<script src="./js/findYear.js"></script>
 	<script src="./js/findLast.js"></script>
@@ -21,7 +22,10 @@
 	<script src="./js/linkAdd.js"></script>
 	<script src="./js/countdownHandler.js"></script>
 	<script src="./js/links.js"></script>
-	<script src="./js/countdown2.js"></script>
+	<script src="./js/hash.js"></script>
+	<script src="./js/infoDefault.js"></script>
+	<!--<script src="./js/set.js"></script>-->
+	<script src="./js/countdown3.js"></script>
 </head>
 <body>
 	<div id="hourglassMenu" class="popup">
@@ -50,31 +54,31 @@
 	<div id="menu">
 	<h1>Pick a countdown...</h1>
 	<p id="Labels">
-		<a id="NewYearsDay">New Years Day</a><br>
-		<a id="MartinLutherKingJrDay">Martin Luther King Jr. Day</a><br>
-		<a id="GeorgeWashingtonsBirthday">George Washington's Birthday</a><br>
-		<a id="MemorialDay">Memorial Day</a><br>
-		<a id="IndependenceDay">Independence Day</a><br>
-		<a id="LaborDay">Labor Day</a><br>
-		<a id="ColumbusDay">Columbus Day</a><br>
-		<a id="VeteransDay">Veterans Day</a><br>
-		<a id="ThanksgivingDay">Thanksgiving Day</a><br>
-		<a id="ChristmasDay">Christmas Day</a><br>
-		<a id="Test">Test</a><br>
+		<a id="NewYearsDay" href="#NewYearsDay">New Years Day</a><br>
+		<a id="MLKDay" href="#MLKDay">Martin Luther King Jr. Day</a><br>
+		<a id="PresidentsDay" href="#PresidentsDay">George Washington's Birthday</a><br>
+		<a id="MemorialDay" href="#MemorialDay">Memorial Day</a><br>
+		<a id="IndependenceDay" href="#IndependenceDay">Independence Day</a><br>
+		<a id="LaborDay" href="#LaborDay">Labor Day</a><br>
+		<a id="ColumbusDay" href="#ColumbusDay">Columbus Day</a><br>
+		<a id="VeteransDay" href="#VeteransDay">Veterans Day</a><br>
+		<a id="ThanksgivingDay" href="#ThanksgivingDay">Thanksgiving Day</a><br>
+		<a id="ChristmasDay" href="#ChristmasDay">Christmas Day</a><br>
+		<a id="Test" href="#Test">Test</a><br>
 	</p>
 	<h1>...or make your own</h1>
 	<form>
 		Date:
-		<input type="date" name=date>
+		<input type="date" name="date">
 		<br>
 		Time:
-		<input type="time" name=time>
+		<input type="time" name="time">
 		<br>
 		Name of event:
-		<input type="text" name=name>
+		<input type="text" name="name">
 		<br>
 		Message to display when timer reaches zero:
-		<input type="text" name=msg>
+		<input type="text" name="msg">
 		<br>
 		Background when timer reaches zero:
 		<select id="background" name=endbg onchange="document.getElementById('end').src = './img/' + this.value + '.gif'">
@@ -87,7 +91,7 @@
 		</select>
 		<img id="end" src="./img/fireworks.gif" style="height: 40px">
 		<br>
-		<input type="hidden" id="hourglassSave" name=hgbg>
+		<input type="hidden" id="hourglassSave" name="hgbg">
 		<input type="submit" value="Go!">
 	</form>
 	</div>
@@ -108,86 +112,12 @@
 	</p>
 	</div>
 	<script>
-		try{
-			var urlinfo = new URLSearchParams(window.location.search);
-			var info = ["0-1-1970", "00:00", 0, 0, "Something Happens", "Something Happened", "fireworks", undefined];
-			var entries = urlinfo.entries();
-			console.log(entries);
-			try{
-				var pair;
-				for(pair of entries) {
-					info[pair[0]] = pair[1];
-				}
-			}catch(err){
-				for(var i=0; i<(entries.length/2); i++){
-					info[entries[i*2]] = entries[(i*2)+1];
-				}
-			}
-			if (urlinfo == ""){
-				destroy("main")
-				//var n = new Date();
-				document.getElementById("NewYearsDay").href = linksMaker(0, "")
-				document.getElementById("MartinLutherKingJrDay").href = linksMaker(1, "")
-				document.getElementById("GeorgeWashingtonsBirthday").href = linksMaker(2, "")
-				document.getElementById("MemorialDay").href = linksMaker(3, "")
-				document.getElementById("IndependenceDay").href = linksMaker(4, "")
-				document.getElementById("LaborDay").href = linksMaker(5, "")
-				document.getElementById("ColumbusDay").href = linksMaker(6, "")
-				document.getElementById("VeteransDay").href = linksMaker(7, "")
-				document.getElementById("ThanksgivingDay").href = linksMaker(8, "")
-				document.getElementById("ChristmasDay").href = linksMaker(9, "")
-				document.getElementById("Test").href = linksMaker(10, "")
-				if (window.location.hash) {
-					try {
-						window.location.assign(document.getElementById(window.location.hash.replace("#", "")).href)
-					}
-					catch(err) {}
-				}
-				window.addEventListener('load', function() {
-					if(document.getElementById("NewYearsDay").href == ""){
-						Redirect("Error: Links did not load");
-					}
-				}, false);
-			}else{
-				destroy("menu");
-				setInterval(function() {
-					countdownHandler(info[0], info[1], info[2], info[3], info[4], info[5], 'url("./img/' + info[6] + '.gif")');
-				}, 1);
-				document.body.style.backgroundImage = "url(\"./img/" + info[7] + ".gif\")";
-				window.addEventListener('load', function() {Readable();}, false);
-				if(info[7] != undefined && info[7] != ""){
-					destroy("hourglassMenu");
-				}
-			}
-				try{
-					var linkslist = ["NewYearsDay", "MartinLutherKingJrDay", "GeorgeWashingtonsBirthday", "MemorialDay", "IndependenceDay", "LaborDay", "ColumbusDay", "VeteransDay", "ThanksgivingDay", "ChristmasDay", "Test"]
-					document.getElementById("hourglassSubmit").onclick = function() {
-						if (document.getElementById('hourglassSave')) {
-							document.getElementById('hourglassSave').value = document.getElementById("hourglassselect").value
-							linkAdd(linkslist, 11, "&7=" + document.getElementById("hourglassselect").value);
-						}else{
-							window.location.assign("?" + urlinfo + "&7=" + document.getElementById("hourglassselect").value);
-						}
-					destroy('hourglassMenu');
-					}
-				}catch(err){
-					
-				}
-			try{
-				window.addEventListener('load', function() {
-					if(!(CSS.supports('color', 'var(--fake-var)'))){
-						Redirect("Error: CSS variables are not supported");
-					}
-				}, false);
-			}catch(err){
-					Redirect("Error: CSS variables are not supported");
-			}
-		}catch(err){
-			if(navigator.userAgent.includes("Safari") && !(navigator.userAgent.includes('Chrome'))){
-				window.location.assign("./safari.html")
-			}else{
-				Redirect(err)
-			}
+		try {
+			init();
+			window.onhashchange = hash();
+		}
+		catch (err) {
+			Redirect(err)
 		}
 	</script>
 </body>
