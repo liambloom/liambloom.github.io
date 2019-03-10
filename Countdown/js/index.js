@@ -2,7 +2,7 @@
 
 const init = () => {
 	hash();
-	window.onhashchange = hash();
+	//window.onhashchange = hash();
 	if (location.search == "") {
 		destroy("main");
 	}
