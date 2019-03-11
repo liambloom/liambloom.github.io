@@ -1,7 +1,9 @@
-function findYear(year, month, holidayMonth) {
-	if (month <= holidayMonth) {
-		return year;
+//jshint esversion:6
+function findYear(month, day) {
+	const n = new Date();
+	if (n.getMonth() <= month && n.getDay() < day) {
+		return n.getFullYear().toString();
 	}else{
-		return year + 1;
+		return (n.getFullYear() + 1).toString();
 	}
 }
