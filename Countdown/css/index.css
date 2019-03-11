@@ -3,13 +3,16 @@
 	--secondary: #a7145d;
 	--tertiary: #0d1532;
 }
+div {
+	display: inline;
+}
 body {
 	text-align: center;
 	font-size: 200px;
 	margin: 150px;
 	color: var(--primary);
 	text-shadow: 0px 0px 20px var(--primary);
-	background-image: url("../img/Hourglass.gif");
+	background-image: url(../img/Hourglass.gif);
 }
 h1 {
 	font-size: 100px;
@@ -17,10 +20,10 @@ h1 {
 p {
 	font-size: 30px;
 }
-/*#HourglassMenu{
+/*#HourglassMenu {
 
 }*/
-.popup{
+.popup {
 	border: 2px solid var(--primary);
 	background: var(--tertiary);
 	padding: 15px;
@@ -30,7 +33,7 @@ p {
 	top: 10px;
 	right: 10px;
 }
-.bottom{
+.bottom {
 	position: fixed;
 	position: -webkit-fixed;
 	bottom: 0px;
@@ -39,7 +42,7 @@ p {
 	width: 100%;
 	padding: 15px;
 }
-.warning{
+.warning {
 	text-shadow: 0px 0px 0px transparent;
 	border: 2px solid #000000;
 	/*background: var(--tertiary);*/
@@ -47,7 +50,7 @@ p {
 	color: #000000;
 	font-size: 15px;
 }
-.x{
+.x {
 	margin: 0px;
 	background-color: transparent;
 	color: #bbbbbb;
@@ -58,7 +61,7 @@ p {
 	right: 0px;
 	position: absolute;
 }
-.x:hover{
+.x:hover {
 	background-color: #ff0000;
 	color: #ffffff;
 }
@@ -68,22 +71,25 @@ a:link {
 a:visited {
 	color: var(--secondary);
 }
-.number{
+.warning a {
+	color: #000000;
+}
+.number {
 	font-size: 100px;
 	font-weight: bold;
 	font-variant-numeric: tabular-nums;
 }
-.label{
+.label {
 	font-size: 50px;
 }
-.smallNumber{
+.smallNumber {
 	font-size: 30px;
 	font-variant-numeric: tabular-nums;
 }
-form{
+form {
 	font-size: 30px;
 }
-input{
+input {
 	border: 2px solid var(--secondary);
 	border-radius: 4px;
 	background: var(--tertiary);
@@ -91,19 +97,19 @@ input{
 	height: 30px;
 	margin: 1px;
 }
-input:focus{
+input:focus {
 	border: 3px solid var(--primary);
 }
-.two{
+.two {
 	width: 25px;
 }
-.three{
+.three {
 	width: 30px;
 }
-.four{
+.four {
 	width: 35px;
 }
-select{
+select {
 	border: 2px solid var(--secondary);
 	border-radius: 4px;
 	background: var(--tertiary);
@@ -111,12 +117,26 @@ select{
 	margin: 1px;
 	height: 30px
 }
-select:focus{
+select:focus {
 	border: 3px solid var(--primary);
 	color: var(--primary);
 }
-img{
+img {
 	margin-top: 2px;
 	margin-bottom: -17px;
 	border: 2px solid var(--primary);
+}
+button.warning {
+	border-radius: 4px;
+}
+button.warning:hover {
+	background: #000000;
+	color: #eeee00;
+}
+button.warning:hover a {
+	color: #eeee00
+}
+.submit:hover {
+	color: var(--tertiary);
+	background-color: var(--secondary);
 }
