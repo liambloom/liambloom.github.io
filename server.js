@@ -6,7 +6,7 @@ const fs = require("fs");
 const port = process.env.PORT || 3000;
 
 http.createServer("/", (req, res) => {
-	let filetype = url.parse(req.url, true).pathname.split(/\.(?=\w+$)/).pop();
+	let filetype = url.parse(req.url, true).pathname.match(/(?<=\.)\w+$/)[0];
 	fs.readFile("." + url.parse(req.url, true).pathname, (err, data) => {
 		if (err) {
 			if (/^(docx?|html?|odt|pdf|xlsx?|ods|pptx?|txt)$/i.test(filetype)) {
