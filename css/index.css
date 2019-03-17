@@ -26,7 +26,7 @@ header {
 		"nav nav";
 	grid-area: header;
 }
-.logo {
+#logo {
 	grid-area: logo;
 	background-image: url(/favicon/beta/favicon_beta_vector.svg);
 	background-size: 76.5px;
@@ -60,8 +60,9 @@ nav#navigationBar {
 nav#navigationBar ul {
 	list-style-type: none;
 	margin: 0px;
-	padding: 0;
+	padding: 0px;
 	overflow: hidden;
+	/*padding-left: 2px; This makes the menu also apear to the left, which is ugly*/
 }
 nav#navigationBar ul li {
 		float: left
