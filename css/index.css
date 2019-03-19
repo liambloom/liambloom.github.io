@@ -1,18 +1,22 @@
 :root {
 	/*font-size: 16px;*/
 	--size: -111.2px;
+	--angle: 130deg;
+	--color: #67d8ef;
 }
 body {
 	margin: 0px;
+	font-family: "Times New Roman", Times, serif;
+	line-height: 1.15em;
+	font-size: 16px;
 	/*font-size: 16px;*/
 }
 #fixed {
 	display: grid;
 	position: sticky;
-	grid-template-rows: 3px max-content max-content;
+	grid-template-rows: max-content max-content;
 	grid-template-columns: 100vw;
 	grid-template-areas: 
-		"padding"
 		"header"
 		"main";
 	top: var(--size);
@@ -20,32 +24,35 @@ body {
 header {
 	display: grid;
 	grid-template-rows: max-content max-content;
-	grid-template-columns: 100px calc(100vw - 100px);
+	grid-template-columns: 117px calc(100vw - 117px);
 	grid-template-areas:
 		"logo title"
 		"nav nav";
 	grid-area: header;
+	color: var(--color);
+	background-image: linear-gradient(var(--angle), #21242b, 70%, #7700aa)
 }
 #logo {
 	grid-area: logo;
 	background-image: url(/favicon/beta/favicon_beta_vector.svg);
-	background-size: 76.5px;
+	background-size: 85px;
 	background-repeat: no-repeat;
-	background-position: 13px 13px;
+	background-position: 16px 16px;
 }
 h1 {
 	grid-area: title;
 	font-size: 90px;
-	color: #67d8ef;
-	padding-left: 5px;
+	padding-left: 2px;
 	margin: 0px;
 	margin-bottom: 5px;
+	line-height: 113.2px;
 }
-#headBG {
+/*#headBG {
 	background-color: #21242b;
-	grid-row: 1/3;
+	grid-row: 1;
 	grid-column: 1;
-}
+	background-image: linear-gradient(var(--angle), #21242b, 70%, #7700aa)
+}*/
 nav#navigationBar {
 	/*margin-bottom: 10px;*/
 	grid-area: nav;
@@ -72,7 +79,7 @@ nav#navigationBar ul li.right {
 }
 nav#navigationBar ul li a {
 	display: block;
-	color: #67d8ef;
+	color: var(--color);
 	padding: 14px 16px;
 	text-decoration: none;
 }
@@ -85,7 +92,7 @@ nav#navigationBar ul li a:hover {
 nav#navigationBar ul li ul {
 	background-color: #21242b;
 	display: none;
-	position: fixed;
+	position: absolute;
 }
 nav#navigationBar ul li ul li {
 	float: none
@@ -95,6 +102,9 @@ nav#navigationBar ul li a:hover + ul {
 }
 nav#navigationBar ul li ul:hover {
 	display: initial;
+}
+.topFixed {
+	grid-area: main;
 }
 /*@supports (some atribute) {
 	css only applied if that atriute is supported 
