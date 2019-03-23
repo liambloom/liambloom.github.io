@@ -2,7 +2,7 @@
   "name": "liambloom.github.io",
   "version": "1.0.0",
   "description": "This is my github.io site served up by a very simple Node.js server",
-  "main": "/servers/serverV2.js",
+  "main": "servers/serverV2.js",
   "directories": {
     "lib": "lib"
   },
