@@ -2,20 +2,23 @@
 	/*font-size: 16px;*/
 	--size: -111.2px;
 	--angle: 130deg;
-	--color: #67d8ef;
+	--light: #0077aa;
+	--dark: #00242b;
+	--headTxt: #0060ce;
 }
 body {
 	margin: 0px;
 	font-family: "Times New Roman", Times, serif;
 	line-height: 1.15em;
 	font-size: 16px;
+	color: var(--dark);
 	/*font-size: 16px;*/
 }
 #fixed {
 	display: grid;
 	position: sticky;
 	grid-template-rows: max-content max-content;
-	grid-template-columns: 100vw;
+	grid-template-columns: 100%;
 	grid-template-areas: 
 		"header"
 		"main";
@@ -24,13 +27,13 @@ body {
 header {
 	display: grid;
 	grid-template-rows: max-content max-content;
-	grid-template-columns: 117px calc(100vw - 117px);
+	grid-template-columns: 117px calc(100% - 117px);
 	grid-template-areas:
 		"logo title"
 		"nav nav";
 	grid-area: header;
-	color: var(--color);
-	background-image: linear-gradient(var(--angle), #21242b, 70%, #7700aa)
+	color: var(--headTxt);
+	background-image: linear-gradient(var(--angle), var(--dark), 70%, var(--light));
 }
 #logo {
 	grid-area: logo;
@@ -56,7 +59,7 @@ h1 {
 nav#navigationBar {
 	/*margin-bottom: 10px;*/
 	grid-area: nav;
-	width: 100vw;
+	width: 100%;
 	padding: 0px;
 	/*position: sticky;
 	position: -webkit-sticky;
@@ -87,10 +90,10 @@ nav#navigationBar ul li a.main {
 	text-align: center;
 }
 nav#navigationBar ul li a:hover {
-	background-color: #17181c;
+	background-color: #0000007f;
 }
 nav#navigationBar ul li ul {
-	background-color: #21242b;
+	background-color: var(--dark);
 	display: none;
 	position: absolute;
 }
@@ -102,6 +105,14 @@ nav#navigationBar ul li a:hover + ul {
 }
 nav#navigationBar ul li ul:hover {
 	display: initial;
+}
+nav#navigationBar ul li details {
+	position: absolute;
+	display: block;
+	padding: 14px 16px;
+}
+nav#navigationBar ul li details[open] {
+	background-color: var(--dark);
 }
 .topFixed {
 	grid-area: main;
