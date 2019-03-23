@@ -34,7 +34,7 @@ const serve = (req, res, page, onerr, status) => {
 };
 const err404 = (req, res, err) => {
 	serve(req, res, "../404/index.html", (req, res, err) => {
-		err500(req, res);
+		err500(req, res, err);
 	}, 404);
 };
 const err500 = (req, res, error) => {
