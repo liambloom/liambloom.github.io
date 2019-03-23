@@ -2,19 +2,20 @@
 const http = require("http");
 const url = require("url");
 const fs = require("fs");
+//const chalk = require("chalk");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8090;
 
 http.createServer("/", (req, res) => {
-	let filetype = url.parse(req.url, true).pathname.match(/(?<=\.)\w+$/)[0];
-	fs.readFile("." + url.parse(req.url, true).pathname, (err, data) => {
+	//let filetype = url.parse(req.url, true).pathname.match(/(?<=\.)\w+$/)[0];
+	fs.readFile(".." + url.parse(req.url, true).pathname, (err, data) => {
 		if (err) {
-			if (/^(docx?|html?|odt|pdf|xlsx?|ods|pptx?|txt)$/i.test(filetype)) {
+			//if (/^(docx?|html?|odt|pdf|xlsx?|ods|pptx?|txt)$/i.test(filetype)) {
 				/*fs.writeFile("./nodeFiles/reqDocument.json", req[1], errAdd => {
 					if (errAdd) console.error("Could not put req in file because " + errAdd);
 					else console.log(req);
 				});*/
-				fs.readFile("./404/index.html", (err404, data404) => {
+				fs.readFile("../404/index.html", (err404, data404) => {
 					try {
 						res.writeHead(404, { "Content-Type": "text/html"});
 						res.write(data404);
@@ -28,12 +29,13 @@ http.createServer("/", (req, res) => {
 						res.end("Error: 404");
 					}
 				});
-			}
+			/*}
 			else {
-				res.writeHead(404);
-				console.log("basic 404 ran for " + req.url);
+				res.writeHead(404, "text/txt");
+				res.write("This page does not exist");
+				//console.log("basic 404 ran for " + req.url);
 				res.end();
-			}
+			}*/
 		}
 		else {
 			try {
