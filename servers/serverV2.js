@@ -8,7 +8,8 @@ const mime = require("mime-types");
 const app = express();
 const port = process.env.PORT || 8080;
 
-const path = req => url.parse(req.url, true).pathname;
+const href = req => url.parse(req.url, true);
+//const query = req => url.parse(req.url, true);
 const filetype = req => req.match(/(?<=\.)[^.]+$/)[0];//Does this work
 const serve = (req, res, page, onerr, status) => {
 	fs.readFile(page, (err, data) => {
@@ -17,10 +18,11 @@ const serve = (req, res, page, onerr, status) => {
 				onerr(req, res, err);
 			}
 			else {
-				err404(req, res, err);
+				err404(req, res);
 			}
 		}
 		else {
+			//console.log(filetype(page));
 			try {
 				res.writeHead(status || 200, {"Content-Type" : mime.contentType(filetype(page))});//Does || do what I think it does?
 				res.write(data);
@@ -32,9 +34,9 @@ const serve = (req, res, page, onerr, status) => {
 		}
 	});
 };
-const err404 = (req, res, err) => {
-	serve(req, res, "../404/index.html", (req, res) => {
-		err500(req, res);
+const err404 = (req, res) => {
+	serve(req, res, "./404/index.html", (req, res, err) => {
+		err500(req, res, err);
 	}, 404);
 };
 const err500 = (req, res, error) => {
@@ -43,13 +45,37 @@ const err500 = (req, res, error) => {
 	res.end();
 };
 
-
-app.get(/\/$/, (req, res) => {
-	serve(req, res, `.${path(req)}index.html`);
+//Countdown Picker Server
+/*app.get(/\/Countdown\/(index.html)?$/, (req, res) => {
+	if (isNaN(req.params.id)) {
+		if (href(req).query) {
+			res.redirect(`/Countdown/${info.handle(href(req).query)}`);
+		}
+		else {
+			serve(req, res, "./Countdown/index.html");
+		}
+	}
 });
 
+//Countdown Redirect Server
+app.get("/Countdown/:event", (req, res) => {
+	if (href(req).hash) {
+		res.redirect(`/Countdown/${info.pre(req.params.event)}`);
+	}
+});
+
+app.get("/Countdown/:time/:name/:hourglass", (req, res) => {
+
+});*/
+
+//Index server
+app.get(/\/$/, (req, res) => {
+	serve(req, res, `.${href(req).pathname}index.html`);
+});
+
+//Main server
 app.get(/[^]/, (req, res) => {
-	serve(req, res, `.${path(req)}`);
+	serve(req, res, `.${href(req).pathname}`);
 });
 
 /*app.route("/css/theme-sugestions.json")
