@@ -9,14 +9,14 @@
 	<link rel="icon" href="/favicon/beta/favicon_beta_96.png">
 	<link rel="icon" href="/favicon/beta/favicon_beta_144.png">
 	<link rel="icon" href="/favicon/beta/favicon_beta_vector.svg">
-	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">-->
 	<link href="/404/css/blueScreenOfDeath.css" rel="stylesheet">
-	<script src="/lib/Lupin/Lupin.js"></script>
+	<!--<script src="/lib/Lupin/Lupin.js"></script>-->
 	<script src="/js/strToBool.js"></script>
 	<script src="/404/js/inputHandler.js"></script>
-	<script src="/404/js/slash.js"></script>
+	<!--<script src="/404/js/slash.js"></script>
 	<script src="/404/js/hash.js"></script>
-	<script src="/404/js/TBGame.js"></script>
+	<script src="/404/js/TBGame.js"></script>-->
 
 </head>
 <body>
@@ -27,8 +27,7 @@
 > That page doesn't exist, so you shouldn't try to go to it<br>
 > Instead, you should try going to some pages that do exist<br>
 > They are much more interesting<br>
-> You can find links to all those in the <a href=https://liambloom.github.io/index.html>home page</a><br>
-> !!!WARNING: THIS PAGE IS UNDER DEVELOPMENT. NOT ALL ASPECTS OF THIS PAGE WILL FUNCTION AS INTENDED!!!<br>
+> You can find links to all those in the <a href="/">home page</a><br>
 </p>
 <input type="text" id="textbox" value="" autofocus>
 	<script>
@@ -48,16 +47,11 @@
 		}
 
 		//Puts url in text
-		if (window.location.search != undefined) {
-			lupin.dom.id("urlhrefspan").innerHTML = window.location.href.split("?")[1]
-		}
-		else {
-			lupin.dom.id("urlhrefspan").innerHTML = "a web page"
-		}
+		document.getElementById("urlhrefspan").innerHTML = window.location.href
 
 		//runs inputHanlder() when enter key pressed
-		lupin.dom.id("textbox").addEventListener("keyup",  function(event){
-			if (lupin.key.check(event.keyCode, "enter")) {
+		document.getElementById("textbox").addEventListener("keyup",  function(event){
+			if (event.keyCode === 13) {
 				inputHandler()
 			}
 		})
