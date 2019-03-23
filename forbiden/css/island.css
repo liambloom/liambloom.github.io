@@ -1,0 +1,13 @@
+body {
+	margin: 5vmin;
+	display: grid;
+	grid-template-rows: 90vmin;
+	grid-template-columns: 90vmin 1fr;
+	grid-template-areas:
+		"board hand";
+}
+#board {
+	display: grid;
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(6, 1fr);
+}
