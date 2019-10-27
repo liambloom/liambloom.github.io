@@ -19,10 +19,11 @@ const serve = (req, res, page, onerr, status) => {
 				onerr(req, res, err);
 			}
 			else {
-				err404(req, res, err);
+				err404(req, res);
 			}
 		}
 		else {
+			//console.log(filetype(page));
 			try {
 				//console.log(data);
 				res.writeHead(status || 200, {"Content-Type" : mime.contentType(filetype(page))});//Does || do what I think it does?
@@ -35,9 +36,9 @@ const serve = (req, res, page, onerr, status) => {
 		}
 	});
 };
-const err404 = (req, res, err) => {
-	serve(req, res, "../404/index.html", (req, res) => {
-		err500(req, res);
+const err404 = (req, res) => {
+	serve(req, res, "./404/index.html", (req, res, err) => {
+		err500(req, res, err);
 	}, 404);
 };
 const err500 = (req, res, error) => {
@@ -47,11 +48,12 @@ const err500 = (req, res, error) => {
 };
 
 app.get(/\/$/, (req, res) => {
-	serve(req, res, `.${path(req)}index.html`);
+	serve(req, res, `.${href(req).pathname}index.html`);
 });
 
+//Main server
 app.get(/[^]/, (req, res) => {
-	serve(req, res, `.${path(req)}`);
+	serve(req, res, `.${href(req).pathname}`);
 });
 
 /*app.route("/css/theme-sugestions.json")
