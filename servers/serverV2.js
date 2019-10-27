@@ -8,6 +8,8 @@ const mime = require("mime-types");
 const app = express();
 const port = process.env.PORT || 8080;
 
+app.set("view engine", "ejs");
+
 const path = req => url.parse(req.url, true).pathname;
 const filetype = req => req.match(/(?<=\.)[^.]+$/)[0];//Does this work
 const serve = (req, res, page, onerr, status) => {
@@ -22,6 +24,7 @@ const serve = (req, res, page, onerr, status) => {
 		}
 		else {
 			try {
+				//console.log(data);
 				res.writeHead(status || 200, {"Content-Type" : mime.contentType(filetype(page))});//Does || do what I think it does?
 				res.write(data);
 				res.end();
@@ -42,7 +45,6 @@ const err500 = (req, res, error) => {
 	res.write(`The page ${req.url} could not be found<br>${error}`);
 	res.end();
 };
-
 
 app.get(/\/$/, (req, res) => {
 	serve(req, res, `.${path(req)}index.html`);
