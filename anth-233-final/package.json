@@ -1,0 +1,13 @@
+{
+  "name": "gqs-final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liam Bloom",
+  "dependencies": {
+    "opentype.js": "^1.3.4"
+  }
+}

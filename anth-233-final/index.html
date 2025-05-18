@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Final</title>
+        <link href="https://www.wesleyan.edu/global/images/favicon.ico" rel="icon">
+        <script src="./lib/noise/noise.js"></script>
+        <script src="index.js" type="module" defer></script>
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body>
+        <main id="main">
+            <div id="canvasContainer">
+                <canvas id="canvas"></canvas>
+                <div id="canvasShadow"></div>
+                <div id="instructions">
+                    <div>Click a word to see its meaning.</div>
+                    <div>Scroll down for the artist's statement</div>
+                </div>
+            </div>
+        </main>
+        <section id="statement">
+            <div id="statement-content">
+                <h2>Artists Statement</h2>
+                <p>
+                    In my first year seminar, when I first encountered Queer in an academic setting, 
+                    and not just as an identity category, my eyes were opened to the true breadth
+                    of identity (or so I thought) as I discovered that it was even more socially
+                    constructed than I previously thought. It also, by opening my eyes, either turned me
+                    into or made me realize I was a queer subject myself. Then, I took global queer
+                    studies and my horizons exploded once again, as the framework that I thought
+                    was broad enough to fit every imaginable identity was broken and rebuilt before
+                    my eyes. Now, I present the tiniest sliver of the thing we call "queer" in a form
+                    that I hope presents some meaningful piece of what queer might be.
+                </p>
+
+                <p>
+                    This piece uses code (specifically HTML, CSS, and javascript) to depict various
+                    terms associated with "queer" moving and shifting and to display possible meanings
+                    for the terms. Due to time constraints, there are only ten terms included in the piece
+                    (each term can take well over an hour to find appropriate "meanings"). Seven of them
+                    are on screen at any given moment, which allows the displayed words to vary, and 
+                    lets it appear busy with terms, but not so crowded that it becomes unreadable.
+                </p>
+
+                <p>
+                    The words are displayed in the Modak font. This font was chosen because of its 
+                    bubby appearance and small gaps, which give a playful, light appearance (to 
+                    symbolize the freeness of "queer") and helps make the words readable while in motion.
+                    They flow on and off the screen because no term or idea in queer studies is permanent
+                    or always accessible; every concept and comes in and out of clarity and legibility.
+                    They also gradually fade at the edges because nothing in queer studies has a fixed
+                    border, whether it is definitions, societies, or this piece. I will note that the
+                    reason the terms have a black border when displayed is despite, and not because, 
+                    of symbolic reasons. Without the black border, the terms are nearly illegible, and
+                    while legibility is of debatable importance to the use of the terms, it is necessary
+                    for the message of this piece.
+                </p>
+
+                <p>
+                    Eight of the ten terms are what I would call "queer" terms; these include concepts
+                    like "queer" and "gender" as well as specific identities like "<i>hijra</i>" and 
+                    <i>tongzhi</i>. As they move across the page, their borders also shift, growing
+                    and shrinking with their movement and with time, symbolizing how these terms
+                    change. Each time a queer term enters the page it is also assigned a random color 
+                    in the HSL color space with 100% saturation, 50% lightness, and a hue between 0 
+                    (red) and 270 (violet). These vibrant rainbow colors are inspired by the rainbow
+                    pride flag, a symbol of the diversity and variety of the people it represents. 
+                </p>
+
+                <p>
+                    I'd like to take a moment to highlight one queer term in particular: "Fields"&mdash;as in
+                    Jacquelyn Fields, the primary subject of Lyndon K. Gill's 2012 paper "Situating Black, 
+                    Situating Queer: Black Queer Diaspora Studies and The Art of Embodied Listening."
+                    While many of the ideas represented in this work can be described by unique words, 
+                    many of the complex intersectional identities that are the subject of queer studies
+                    have no such terms. In these cases, while it is possible to combine terms to create
+                    something that approximates an idea, a far more thorough and nuanced concept can be 
+                    represented by reference to a subject rather than a concept. This is why Gill's paper,
+                    ostensibly about the abstract concept of Black queer diaspora subjectivity, spends so 
+                    much time on a single Black queer diasporic subject. Similarly, I use Fields to represent
+                    a multifaceted queer construct that could not otherwise be labeled, and thus could not
+                    otherwise be included in a label-based study of queerness such as this piece.
+                </p>
+
+                <p>
+                    Each queer term is associated with a list of "meanings." This list is shuffled when
+                    the page first loads and then displayed in order; this ensures that if you keep clicking
+                    on the same term, you will get many different meanings. The purpose of the meanings
+                    is self-explanatory, all of these terms have multiple meanings because queer is 
+                    subversive, so any queer term will inherently subvert any attempt to define it. These
+                    definitions (as well as this artist's statement) are in the for Courier Prime, a 
+                    classic-looking monospaced font similar to the fonts used by programmers, to symbolize
+                    the medium of this piece.
+                </p>
+
+                <p>
+                    In addition to the eight queer terms, there are two terms that I did not dub queer 
+                    terms: homonationalism and pinkwashing. While queer terms attempt to describe 
+                    the lived experiences of queer subjects in subversive and varied ways, these terms
+                    describe actions by centers of power (especially the state) to take advantage of 
+                    queer subjects and identities for their own purposes. They each have only one possible
+                    meaning that shows up when they are clicked. This is not because these terms only have 
+                    one possible meaning&mdash;they are, after all, still a part of queer 
+                    studies&mdash;rather, I have only included one possible meaning in order to symbolize
+                    the non-queerness and non-subversiveness of the actions described by these terms. For
+                    the same reason, the borders of these terms stay fixed, rather than growing and
+                    shrinking like the borders of the queer terms.
+                </p>
+
+                <p>
+                    The colors of these terms also fall outside the rainbow that is used for the 
+                    queer terms. Pinkwashing is written in pink for obvious reasons, and homonationalism
+                    is written in either old glory red, white, or old glory blue, the official colors of 
+                    the US flag, to represent the state that is enacting it. None of these terms have 
+                    the same saturation or lightness as the rainbow colors used for queer terms. 
+                </p>
+
+                <p>
+                    Finally, the most important piece of symbolism in this piece is the randomness.
+                    Random numbers are generated in 14 different places in the code, determining the 
+                    movement of the terms (<input type="checkbox" id="showMovePaths"> click this checkbox 
+                    to show the random points that control the path the words take), the shifting of
+                    their borders, what color they are, the placement of their meanings, and which 
+                    meanings are used. This ensures that just like how every experience and understanding
+                    of queerness is unique, so too, is every experience of this piece.
+                </p>                
+           </div>
+        </section>
+
+        <!--It is in this context that I now turn to a
+particular Black queer diasporic subject to specify
+an earlier obliquely referenced Black queer subjectivity. (Gill 32)-->
+
+<!--
+ It has been humbling and also very interesting to see the ways homonationalism as
+ a concept has been deployed, adapted, rearticulated, and critiqued in various national,
+ activist, and academic contexts; giving rise to generative and constructive debate was
+ my true intent in writing the book, which was derived not as a corrective but as an
+ incitement to debate. (Puar 336)-->
+    </body>
+</html>
